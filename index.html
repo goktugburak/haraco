@@ -3286,10 +3286,8 @@
           <div class="contact-form-card">
             <h3 class="contact-form-title" data-tr="Mesaj Gönder" data-en="Send a Message">Mesaj Gönder</h3>
             <p class="contact-form-sub" data-tr="Sana en kısa sürede dönüş yapacağız ✨" data-en="We'll get back to you as soon as possible ✨">Sana en kısa sürede dönüş yapacağız ✨</p>
-            <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-              <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
-              <input type="hidden" name="subject" value="HaraCo İletişim Formu" />
-              <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
+            <form class="contact-form" id="contactForm" action="https://formspree.io/f/xbdbbvbl" method="POST">
+              <input type="hidden" name="_subject" value="HaraCo İletişim Formu" />
               <div class="field-group">
                 <label for="contactName" data-tr="İsim" data-en="Name">İsim</label>
                 <input type="text" id="contactName" name="name" placeholder="Adın soyadın" data-tr="Adın soyadın" data-en="Your full name" required />
@@ -3639,13 +3637,13 @@
       btn.disabled = true;
       btn.textContent = 'Gönderiliyor...';
       try {
-        const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
+        const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
         const json = await res.json();
-        if (json.success) {
+        if (res.ok) {
           alert('✨ Mesajınız başarıyla gönderildi! En kısa sürede dönüş yapacağız. 🚀');
           form.reset();
         } else {
-          alert('Bir hata oluştu. Lütfen tekrar deneyin.');
+          alert(json.error || 'Bir hata oluştu. Lütfen tekrar deneyin.');
         }
       } catch {
         alert('Bağlantı hatası. Lütfen daha sonra tekrar deneyin.');
