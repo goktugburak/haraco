@@ -566,7 +566,7 @@
         <div class="product-card reveal reveal-delay-${(i % 3) + 1}" data-category="${p.category}">
           <div class="product-image" style="background: ${p.bg};">
             <div class="product-image-glow"></div>
-            <span class="emoji"><picture><img src="${p.image}" alt="${p.name}" width="300" height="300" loading="lazy" /></picture></span>
+            <span class="emoji"><picture><img src="${p.image}" alt="${p.name}" width="300" height="300"${i < 3 ? ' loading="eager" fetchpriority="high"' : ' loading="lazy"' } /></picture></span>
           </div>
           <div class="product-info">
             <div class="product-category">${catNames[p.category]}</div>
