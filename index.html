@@ -109,14 +109,6 @@
       background: linear-gradient(165deg, rgba(255, 255, 255, 0.8), rgba(248, 246, 255, 0.9));
     }
 
-    html.light-mode .brand-stat {
-      background: #FFFFFF;
-    }
-
-    html.light-mode .newsletter-box {
-      background: #FFFFFF;
-    }
-
     html.light-mode .footer {
       border-top-color: rgba(245, 50, 106, 0.08);
     }
@@ -234,14 +226,6 @@
 
     .reveal-delay-3 {
       transition-delay: 0.3s;
-    }
-
-    .reveal-delay-4 {
-      transition-delay: 0.4s;
-    }
-
-    .reveal-delay-5 {
-      transition-delay: 0.5s;
     }
 
     /* ========== NAVIGATION ========== */
@@ -689,22 +673,6 @@
       50% {
         transform: translateY(-12px);
       }
-    }
-
-    .hero-product-label {
-      font-family: var(--font-jp);
-      font-size: 0.7rem;
-      letter-spacing: 3px;
-      color: var(--text-muted);
-      margin-top: 16px;
-      text-transform: uppercase;
-    }
-
-    .hero-product-price {
-      font-family: var(--font-display);
-      font-size: 1.8rem;
-      color: var(--accent);
-      letter-spacing: 2px;
     }
 
     .hero-ring {
@@ -2935,7 +2903,9 @@
   <nav class="nav" id="nav">
     <div class="container">
       <a href="#" class="nav-logo" style="display:flex;align-items:center;gap:12px;" aria-label="HaraCo Ana Sayfa">
-        <img src="https://i.ibb.co/vvRRdbWv/haraco-logo.jpg" alt="HaraCo logosu" loading="lazy" style="height:48px;width:48px;border-radius:50%;object-fit:cover;display:block;flex-shrink:0;" />
+        <picture>
+          <img src="https://i.ibb.co/vvRRdbWv/haraco-logo.jpg" alt="HaraCo logosu" width="48" height="48" loading="lazy" style="border-radius:50%;object-fit:cover;display:block;flex-shrink:0;" />
+        </picture>
         <span style="display:flex;flex-direction:column;">
           <span style="font-family:var(--font-display);font-size:1.8rem;letter-spacing:3px;line-height:1;color:var(--text-primary);">Hara<span style="color:var(--accent);">Co</span></span>
           <small style="font-family:var(--font-jp);font-size:0.55rem;font-weight:300;letter-spacing:1px;color:var(--text-muted);display:block;margin-top:-2px;">彩りのコレクション</small>
@@ -3014,7 +2984,7 @@
         <div class="hero-product">
           <div class="hero-product-glow"></div>
           <div class="hero-product-content">
-            <div class="hero-product-emoji"><img src="https://i.ibb.co/8D8XKLCj/image.png" alt="Sınırlı Üretim Koleksiyon Ürünü" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:24px;" /></div>
+            <div class="hero-product-emoji"><picture><img src="https://i.ibb.co/8D8XKLCj/image.png" alt="Sınırlı Üretim Koleksiyon Ürünü" width="420" height="420" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:24px;" /></picture></div>
             <div class="hero-product-label">Sınırlı Üretim</div>
             <div class="hero-product-price">314.99 TL</div>
           </div>
@@ -3320,7 +3290,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="#" class="nav-logo" style="display:flex;align-items:center;gap:10px;">
-            <img src="https://i.ibb.co/vvRRdbWv/haraco-logo.jpg" alt="HaraCo" style="height:40px;width:40px;border-radius:50%;object-fit:cover;display:block;flex-shrink:0;" />
+            <picture><img src="https://i.ibb.co/vvRRdbWv/haraco-logo.jpg" alt="HaraCo" width="40" height="40" loading="lazy" style="border-radius:50%;object-fit:cover;display:block;flex-shrink:0;" /></picture>
             <span style="display:flex;flex-direction:column;">
               <span style="font-family:var(--font-display);font-size:1.5rem;letter-spacing:3px;line-height:1;color:var(--text-primary);">Hara<span style="color:var(--accent);">Co</span></span>
               <small style="font-family:var(--font-jp);font-size:0.5rem;font-weight:300;letter-spacing:1px;color:var(--text-muted);display:block;margin-top:-2px;">彩りのコレクション</small>
@@ -3407,7 +3377,7 @@
   </div>
 
   <script>
-    // ========== PRODUCT DATA ==========
+    // PRODUCT DATA
     const products = [
       { id: 1, name: 'Killua Zoldyck - Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/p62kJnb6/anahtarl-k1.jpg', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
       { id: 2, name: 'Satoru Gojo - Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/Fkx09DhD/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
@@ -3451,10 +3421,11 @@
       { id: 30, name: 'Viva La Vida Karpuz Pena Kolye', category: 'kolye', price: 155, image: 'https://i.ibb.co/jkJ78TGY/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
     ];
 
-    // ========== RENDER PRODUCTS ==========
+    // RENDER PRODUCTS
     const grid = document.getElementById('productsGrid');
     let activeFilter = 'all';
     let searchTerm = '';
+    const catNames = { figures:'Figür', keychains:'Anahtarlık', stickers:'Çıkartma', rozet:'Rozet', charm:'Charm', kolye:'Kolye' };
 
     function renderProducts(filter) {
       const byCategory = filter === 'all' ? products : products.filter(p => p.category === filter);
@@ -3464,10 +3435,10 @@
         <div class="product-card reveal reveal-delay-${(i % 3) + 1}" data-category="${p.category}">
           <div class="product-image" style="background: ${p.bg};">
             <div class="product-image-glow"></div>
-            <span class="emoji">${p.image ? `<img src="${p.image}" alt="${p.name}" loading="lazy" />` : p.emoji}</span>
+            <span class="emoji"><picture><img src="${p.image}" alt="${p.name}" width="300" height="300" loading="lazy" /></picture></span>
           </div>
           <div class="product-info">
-            <div class="product-category">${p.category === 'figures' ? 'Figür' : p.category === 'keychains' ? 'Anahtarlık' : p.category === 'stickers' ? 'Çıkartma' : p.category === 'rozet' ? 'Rozet' : p.category === 'charm' ? 'Charm' : 'Kolye'}</div>
+            <div class="product-category">${catNames[p.category]}</div>
             <h3 class="product-name">${p.name}</h3>
             <div class="product-bottom">
               <span class="product-price">${p.price.toFixed(2)} TL</span>
@@ -3480,14 +3451,14 @@
           </div>
         </div>
       `).join('');
-      // Re-trigger observer for new elements
       observeReveals();
     }
 
-    // ========== FILTERS ==========
-    document.querySelectorAll('.filter-btn').forEach(btn => {
+    // FILTERS
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         activeFilter = btn.dataset.filter;
         renderProducts(activeFilter);
@@ -3496,7 +3467,7 @@
       });
     });
 
-    // ========== SEARCH ==========
+    // SEARCH
     const searchInput = document.getElementById('searchInput');
     const searchClear = document.getElementById('searchClear');
 
@@ -3514,7 +3485,7 @@
       searchInput.focus();
     });
 
-    // ========== CART ==========
+    // CART
     let cart = [];
 
     function addToCart(id) {
@@ -3574,7 +3545,7 @@
       container.innerHTML = cart.map(item => `
         <div class="cart-item">
           <div class="cart-item-img">
-            <img src="${item.image}" alt="${item.name}" loading="lazy" />
+            <picture><img src="${item.image}" alt="${item.name}" width="64" height="64" loading="lazy" /></picture>
           </div>
           <div class="cart-item-info">
             <div class="cart-item-name">${item.name}</div>
@@ -3602,15 +3573,17 @@
       document.getElementById('checkoutBtn').disabled = cart.length === 0;
     }
 
+    const cartOverlay = document.getElementById('cartOverlay');
+    const cartPanel = document.getElementById('cartPanel');
     function openCart() {
-      document.getElementById('cartOverlay').classList.add('open');
-      document.getElementById('cartPanel').classList.add('open');
+      cartOverlay.classList.add('open');
+      cartPanel.classList.add('open');
       document.body.style.overflow = 'hidden';
     }
 
     function closeCart() {
-      document.getElementById('cartOverlay').classList.remove('open');
-      document.getElementById('cartPanel').classList.remove('open');
+      cartOverlay.classList.remove('open');
+      cartPanel.classList.remove('open');
       document.body.style.overflow = '';
     }
 
@@ -3628,7 +3601,7 @@
       closeCart();
     }
 
-    // ========== CONTACT FORM ==========
+    // CONTACT FORM
     document.getElementById('contactForm').addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = document.getElementById('contactSubmitBtn');
@@ -3652,7 +3625,7 @@
       btn.textContent = 'Gönder';
     });
 
-    // ========== THEME TOGGLE ==========
+    // THEME TOGGLE
     const html = document.documentElement;
     const themeBtn = document.getElementById('navTheme');
     const sun = themeBtn.querySelector('.theme-sun');
@@ -3669,7 +3642,7 @@
       localStorage.setItem('theme', isLight ? 'light' : 'dark');
     });
 
-    // ========== LANGUAGE TOGGLE ==========
+    // LANGUAGE TOGGLE
     let lang = localStorage.getItem('lang') || 'tr';
     function applyLang(l) {
       document.getElementById('navLang').textContent = l.toUpperCase();
@@ -3689,27 +3662,27 @@
       applyLang(lang);
     });
 
-    // ========== NAV SEARCH CLICK ==========
+    // NAV SEARCH CLICK
     document.getElementById('navSearchIcon').addEventListener('click', () => {
-      const section = document.getElementById('shop');
-      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setTimeout(() => document.getElementById('searchInput').focus(), 500);
+      document.getElementById('shop').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setTimeout(() => searchInput.focus(), 500);
     });
 
-    // ========== NAV CART CLICK ==========
+    // NAV CART CLICK
     document.querySelector('.nav-cart').addEventListener('click', openCart);
 
-    // ========== MOBILE NAV ==========
+    // MOBILE NAV
     document.getElementById('navToggle').addEventListener('click', () => {
       document.getElementById('navLinks').classList.toggle('open');
     });
 
-    // ========== NAV SCROLL EFFECT ==========
+    // NAV SCROLL EFFECT
+    const navEl = document.getElementById('nav');
     window.addEventListener('scroll', () => {
-      document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
+      navEl.classList.toggle('scrolled', window.scrollY > 60);
     });
 
-    // ========== SCROLL REVEAL ==========
+    // SCROLL REVEAL
     function observeReveals() {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -3723,39 +3696,36 @@
       document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     }
 
-    // ========== 3D TILT ON GLASS CARDS ==========
+    // 3D TILT
     document.querySelectorAll('.about-card').forEach(card => {
       card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width;
-        const y = (e.clientY - rect.top) / rect.height;
-        card.style.setProperty('--mx', `${x * 100}%`);
-        card.style.setProperty('--my', `${y * 100}%`);
+        const { left, width, top, height } = card.getBoundingClientRect();
+        const x = (e.clientX - left) / width * 100;
+        const y = (e.clientY - top) / height * 100;
+        card.style.setProperty('--mx', `${x}%`);
+        card.style.setProperty('--my', `${y}%`);
       });
     });
-
-    // ========== 3D TILT ON CATEGORY CARDS ==========
     document.querySelectorAll('.category-card').forEach(card => {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width;
-        const y = (e.clientY - rect.top) / rect.height;
-        const tiltX = (y - 0.5) * -12;
-        const tiltY = (x - 0.5) * 12;
-        card.style.setProperty('--rot-x', `${tiltX}deg`);
-        card.style.setProperty('--rot-y', `${tiltY}deg`);
-        card.style.setProperty('--mx', `${x * 100}%`);
-        card.style.setProperty('--my', `${y * 100}%`);
-      });
-      card.addEventListener('mouseleave', () => {
+      const resetTilt = () => {
         card.style.setProperty('--rot-x', '0deg');
         card.style.setProperty('--rot-y', '0deg');
         card.style.setProperty('--mx', '50%');
         card.style.setProperty('--my', '0%');
+      };
+      card.addEventListener('mousemove', (e) => {
+        const { left, width, top, height } = card.getBoundingClientRect();
+        const x = (e.clientX - left) / width;
+        const y = (e.clientY - top) / height;
+        card.style.setProperty('--rot-x', `${(y - 0.5) * -12}deg`);
+        card.style.setProperty('--rot-y', `${(x - 0.5) * 12}deg`);
+        card.style.setProperty('--mx', `${x * 100}%`);
+        card.style.setProperty('--my', `${y * 100}%`);
       });
+      card.addEventListener('mouseleave', resetTilt);
     });
 
-    // ========== INIT ==========
+    // INIT
     renderProducts('all');
   </script>
 </body>
