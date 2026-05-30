@@ -5,11 +5,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HaraCo — Anime Koleksiyonları</title>
+  <meta name="description" content="HaraCo — En sevdiğiniz anime evrenlerini özenle seçilmiş koleksiyonluk parçalarla gerçek dünyaya taşıyoruz. Figür, anahtarlık, çıkartma, rozet, charm ve kolye." />
+  <meta name="theme-color" content="#1A0C33" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231A0C33'/%3E%3Ctext x='16' y='22' font-size='18' text-anchor='middle' fill='%23F5326A' font-family='sans-serif' font-weight='bold'%3EH%3C/text%3E%3C/svg%3E" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231A0C33'/%3E%3Ctext x='16' y='22' font-size='18' text-anchor='middle' fill='%23F5326A' font-family='sans-serif' font-weight='bold'%3EH%3C/text%3E%3C/svg%3E" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="HaraCo — Anime Koleksiyonları" />
+  <meta property="og:description" content="En sevdiğiniz anime evrenlerini özenle seçilmiş koleksiyonluk parçalarla gerçek dünyaya taşıyoruz." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://haraco.com" />
+  <meta property="og:image" content="https://i.ibb.co/vvRRdbWv/haraco-logo.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;500;700&family=Sora:wght@300;400;600&display=swap"
     rel="stylesheet" />
+  <!-- Google Analytics (replace G-XXXXXXXXXX with your ID) -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
   <style>
     /* ========== DESIGN TOKENS ========== */
     :root {
@@ -32,6 +45,80 @@
       --font-body: 'Sora', sans-serif;
       --font-jp: 'Noto Sans JP', sans-serif;
       --container: 1200px;
+    }
+
+    /* ========== LIGHT MODE ========== */
+    html.light-mode {
+      --bg-deep: #F5F0FF;
+      --bg-primary: #FFFFFF;
+      --bg-secondary: #F8F6FF;
+      --bg-card: #FFFFFF;
+      --text-primary: #1A0C33;
+      --text-secondary: #5A4A7A;
+      --text-muted: #8A7AAA;
+      --border: rgba(245, 50, 106, 0.15);
+    }
+
+    html.light-mode .nav {
+      background: rgba(255, 255, 255, 0.8);
+      border-bottom-color: rgba(245, 50, 106, 0.08);
+    }
+
+    html.light-mode .nav.scrolled {
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    html.light-mode .contact-form-card,
+    html.light-mode .about-card,
+    html.light-mode .search-bar {
+      background: rgba(255, 255, 255, 0.7);
+      border-color: rgba(245, 50, 106, 0.1);
+    }
+
+    html.light-mode .search-bar input::placeholder {
+      color: rgba(90, 74, 122, 0.4);
+    }
+
+    html.light-mode .contact-form input,
+    html.light-mode .contact-form textarea {
+      background: rgba(245, 240, 255, 0.6);
+      border-color: rgba(245, 50, 106, 0.1);
+    }
+
+    html.light-mode .cart-panel {
+      background: linear-gradient(180deg, #FFFFFF 0%, #F8F6FF 100%);
+    }
+
+    html.light-mode .cart-item {
+      border-bottom-color: rgba(245, 50, 106, 0.06);
+    }
+
+    html.light-mode .product-card {
+      background: #FFFFFF;
+    }
+
+    html.light-mode .category-card {
+      background: linear-gradient(165deg, rgba(255, 255, 255, 0.9), rgba(248, 246, 255, 0.95));
+    }
+
+    html.light-mode .card-scene {
+      background: var(--scene-bg, linear-gradient(135deg, #F0E8FF, #E8DDFF));
+    }
+
+    html.light-mode .team-card {
+      background: linear-gradient(165deg, rgba(255, 255, 255, 0.8), rgba(248, 246, 255, 0.9));
+    }
+
+    html.light-mode .brand-stat {
+      background: #FFFFFF;
+    }
+
+    html.light-mode .newsletter-box {
+      background: #FFFFFF;
+    }
+
+    html.light-mode .footer {
+      border-top-color: rgba(245, 50, 106, 0.08);
     }
 
     /* ========== RESET ========== */
@@ -259,6 +346,78 @@
     }
 
     .nav-cart svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .nav-lang {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      transition: var(--transition);
+      color: var(--text-secondary);
+      font-family: var(--font-jp);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      background: none;
+      cursor: pointer;
+    }
+
+    .nav-lang:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+
+    .nav-theme {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      transition: var(--transition);
+      color: var(--text-secondary);
+      background: none;
+      cursor: pointer;
+    }
+
+    .nav-theme:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+
+    .nav-theme svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .nav-search-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      transition: var(--transition);
+      color: var(--text-secondary);
+    }
+
+    .nav-search-icon:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+
+    .nav-search-icon svg {
       width: 18px;
       height: 18px;
     }
@@ -584,41 +743,62 @@
       }
     }
 
-    /* ========== CATEGORIES ========== */
+    /* ========== CATEGORIES (REDESIGNED 3D) ========== */
     .categories {
-      padding: 100px 0;
+      padding: 120px 0;
       background: var(--bg-secondary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .categories::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 600px 400px at 10% 20%, rgba(168, 85, 247, 0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 500px 500px at 90% 80%, rgba(245, 50, 106, 0.05) 0%, transparent 70%);
+      pointer-events: none;
     }
 
     .categories-header {
       text-align: center;
-      margin-bottom: 56px;
+      margin-bottom: 64px;
+      position: relative;
     }
 
     .categories-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      perspective: 1200px;
     }
 
     .category-card {
-      background: var(--bg-card);
-      border-radius: var(--radius);
-      padding: 40px 32px;
-      text-align: center;
-      border: 1px solid var(--border);
-      transition: var(--transition);
+      background: linear-gradient(165deg, rgba(45, 21, 80, 0.85), rgba(26, 12, 51, 0.95));
+      border-radius: 20px;
+      padding: 0;
+      border: 1px solid rgba(245, 50, 106, 0.1);
+      transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.4s ease, box-shadow 0.5s ease;
       position: relative;
       overflow: hidden;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      gap: 0;
+      transform-style: preserve-3d;
+      will-change: transform;
     }
 
     .category-card::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 50% 0%, var(--accent-glow) 0%, transparent 60%);
+      background: radial-gradient(circle at var(--mx, 50%) var(--my, 0%), var(--card-glow, rgba(245, 50, 106, 0.15)) 0%, transparent 60%);
       opacity: 0;
-      transition: opacity var(--transition);
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+      z-index: 0;
     }
 
     .category-card:hover::before {
@@ -627,7 +807,7 @@
 
     .category-card:hover {
       border-color: rgba(255, 87, 51, 0.3);
-      transform: translateY(-4px);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), 0 0 40px var(--card-glow);
     }
 
     .category-card * {
@@ -635,35 +815,911 @@
       z-index: 1;
     }
 
-    .category-icon {
-      width: 64px;
-      height: 64px;
-      margin: 0 auto 20px;
-      background: rgba(255, 87, 51, 0.08);
-      border-radius: 50%;
+    /* ===== Card Scene (3D Visual) ===== */
+    .card-scene {
+      flex: 0 0 200px;
+      min-height: 220px;
+      position: relative;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.8rem;
-      transition: var(--transition);
+      background: var(--scene-bg, linear-gradient(135deg, #2D1550, #1A0C33));
+      border-radius: 20px 0 0 20px;
     }
 
-    .category-card:hover .category-icon {
-      background: rgba(255, 87, 51, 0.2);
-      box-shadow: 0 0 30px var(--accent-glow);
+    .card-scene-inner {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform-style: preserve-3d;
     }
 
-    .category-card h3 {
+    /* ===== Card Content ===== */
+    .card-content {
+      flex: 1;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .card-content h3 {
       font-family: var(--font-display);
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       letter-spacing: 2px;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+      position: relative;
     }
 
-    .category-card p {
+    .card-content h3::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--card-accent, var(--accent));
+      border-radius: 2px;
+      transition: width 0.4s ease;
+    }
+
+    .category-card:hover .card-content h3::after {
+      width: 80px;
+    }
+
+    .card-content p {
       color: var(--text-secondary);
       font-size: 0.85rem;
       font-weight: 300;
+      line-height: 1.7;
+      margin-top: 8px;
+    }
+
+    /* ===== FIGÜRLER SCENE ===== */
+    .scene-figures {
+      --card-hue: 340;
+    }
+    .scene-figures .figurine-base {
+      position: absolute;
+      width: 80px;
+      height: 24px;
+      bottom: 20px;
+      background: linear-gradient(135deg, #4a2a6a, #2d1550);
+      border-radius: 50%;
+      filter: blur(2px);
+      opacity: 0.6;
+      animation: fig-base-pulse 3s ease-in-out infinite;
+    }
+    .scene-figures .figurine-body {
+      position: relative;
+      width: 64px;
+      height: 90px;
+      background: linear-gradient(180deg, #7c3aed 0%, #a855f7 40%, #c084fc 70%, #e9d5ff 100%);
+      border-radius: 30% 30% 40% 40% / 40% 40% 30% 30%;
+      transform-style: preserve-3d;
+      animation: float-ease 4s ease-in-out infinite;
+      box-shadow: 0 8px 32px rgba(168, 85, 247, 0.3), inset 0 -20px 40px rgba(0,0,0,0.2);
+    }
+    .scene-figures .figurine-body::before {
+      content: '';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 36px;
+      height: 32px;
+      background: radial-gradient(ellipse at 50% 60%, #fbbf24 0%, #d97706 60%, transparent 100%);
+      border-radius: 50% 50% 20% 20%;
+      box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+    }
+    .scene-figures .figurine-body::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 10px;
+      background: rgba(0,0,0,0.2);
+      border-radius: 50%;
+      filter: blur(3px);
+    }
+    .scene-figures .figurine-wings {
+      position: absolute;
+      top: 20px;
+      width: 28px;
+      height: 40px;
+      background: linear-gradient(180deg, rgba(168, 85, 247, 0.3), rgba(196, 132, 252, 0.1));
+      border-radius: 50% 50% 20% 20%;
+      transform-origin: center bottom;
+      animation: wing-flap 2s ease-in-out infinite;
+    }
+    .scene-figures .figurine-wings.left { left: -18px; transform: rotate(20deg); }
+    .scene-figures .figurine-wings.right { right: -18px; transform: rotate(-20deg); animation-delay: 0.1s; }
+    .scene-figures .figurine-glow {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(168, 85, 247, 0.2) 0%, transparent 70%);
+      animation: glow-pulse 3s ease-in-out infinite alternate;
+    }
+    @keyframes float-ease {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes wing-flap {
+      0%, 100% { transform: rotate(var(--wing-angle, 20deg)) scaleX(1); }
+      50% { transform: rotate(var(--wing-angle, 20deg)) scaleX(0.85); }
+    }
+    @keyframes glow-pulse {
+      0% { opacity: 0.4; transform: scale(0.8); }
+      100% { opacity: 0.8; transform: scale(1.2); }
+    }
+    @keyframes fig-base-pulse {
+      0%, 100% { transform: scaleX(1); opacity: 0.5; }
+      50% { transform: scaleX(1.2); opacity: 0.3; }
+    }
+
+    /* ===== ANAHTARLIKLAR SCENE ===== */
+    .scene-keychains {
+      --card-hue: 200;
+    }
+    .scene-keychains .keyring-main {
+      position: relative;
+      width: 90px;
+      height: 90px;
+    }
+    .scene-keychains .keyring-ring {
+      position: absolute;
+      inset: 0;
+      border: 3px solid transparent;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706) border-box;
+      -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      animation: ring-spin 8s linear infinite;
+      box-shadow: 0 0 20px rgba(251, 191, 36, 0.2), inset 0 0 20px rgba(251, 191, 36, 0.1);
+    }
+    .scene-keychains .keyring-ring-2 {
+      position: absolute;
+      inset: 12px;
+      border: 2px solid rgba(192, 132, 252, 0.3);
+      border-radius: 50%;
+      animation: ring-spin 6s linear infinite reverse;
+    }
+    .scene-keychains .keyring-charm {
+      position: absolute;
+      bottom: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30px;
+      height: 36px;
+      background: linear-gradient(180deg, #fbbf24, #f59e0b);
+      border-radius: 4px 4px 8px 8px;
+      box-shadow: 0 4px 16px rgba(251, 191, 36, 0.3);
+    }
+    .scene-keychains .keyring-charm::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 8px;
+      border: 2px solid #fbbf24;
+      border-bottom: none;
+      border-radius: 3px 3px 0 0;
+    }
+    .scene-keychains .keyring-charm::after {
+      content: '✦';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: #92400e;
+    }
+    .scene-keychains .keyring-sparkle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #fbbf24;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #fbbf24;
+      animation: sparkle 2s ease-in-out infinite;
+    }
+    .scene-keychains .keyring-sparkle:nth-child(4) { top: 8px; left: 8px; animation-delay: 0.3s; }
+    .scene-keychains .keyring-sparkle:nth-child(5) { top: 4px; right: 16px; animation-delay: 0.7s; }
+    .scene-keychains .keyring-sparkle:nth-child(6) { bottom: 40px; right: 4px; animation-delay: 1.1s; }
+    @keyframes ring-spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes sparkle {
+      0%, 100% { opacity: 0; transform: scale(0); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+
+    /* ===== ÇIKARTMALAR SCENE ===== */
+    .scene-stickers {
+      --card-hue: 180;
+    }
+    .scene-stickers .sticker-stack {
+      position: relative;
+      width: 100px;
+      height: 100px;
+    }
+    .scene-stickers .sticker-layer {
+      position: absolute;
+      border-radius: 12px;
+      transform-origin: center;
+      transition: transform 0.3s ease;
+    }
+    .scene-stickers .sticker-layer-1 {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #06b6d4, #0891b2);
+      top: 10px;
+      left: 10px;
+      transform: rotate(-8deg);
+      box-shadow: 0 4px 20px rgba(6, 182, 212, 0.3);
+    }
+    .scene-stickers .sticker-layer-2 {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, #ec4899, #db2777);
+      top: 18px;
+      left: 18px;
+      transform: rotate(5deg);
+      box-shadow: 0 4px 20px rgba(236, 72, 153, 0.3);
+    }
+    .scene-stickers .sticker-layer-3 {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #fbbf24, #f59e0b);
+      top: 26px;
+      left: 26px;
+      transform: rotate(-3deg);
+      box-shadow: 0 4px 20px rgba(251, 191, 36, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .scene-stickers .sticker-layer-3::after {
+      content: '★';
+      font-size: 28px;
+      color: rgba(255,255,255,0.7);
+    }
+    .scene-stickers .sticker-holo {
+      position: absolute;
+      inset: 0;
+      border-radius: 12px;
+      background: linear-gradient(135deg,
+        transparent 0%, rgba(255,255,255,0.1) 25%,
+        transparent 50%, rgba(255,255,255,0.15) 75%,
+        transparent 100%);
+      background-size: 200% 200%;
+      animation: holo-shift 4s ease-in-out infinite;
+    }
+    .scene-stickers .sticker-surface {
+      position: absolute;
+      bottom: 0;
+      left: 5px;
+      right: 5px;
+      height: 12px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 0 0 8px 8px;
+      transform: perspective(200px) rotateX(60deg);
+      transform-origin: bottom;
+    }
+    @keyframes holo-shift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* ===== ROZET SCENE ===== */
+    .scene-rozet {
+      --card-hue: 220;
+    }
+    .scene-rozet .badge-container {
+      position: relative;
+      width: 110px;
+      height: 110px;
+    }
+    .scene-rozet .badge-outer {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #fbbf24, #d97706, #b45309);
+      padding: 6px;
+      box-shadow: 0 0 30px rgba(251, 191, 36, 0.2), inset 0 0 20px rgba(251, 191, 36, 0.1);
+      animation: badge-glow 3s ease-in-out infinite alternate;
+    }
+    .scene-rozet .badge-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1e3a5f, #1a2d4a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .scene-rozet .badge-inner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 35% 35%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+    }
+    .scene-rozet .badge-phoenix {
+      font-size: 36px;
+      color: #fbbf24;
+      filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.4));
+      animation: phoenix-glow 2s ease-in-out infinite alternate;
+    }
+    .scene-rozet .badge-dots {
+      position: absolute;
+      inset: -2px;
+      border-radius: 50%;
+      border: 2px dotted rgba(251, 191, 36, 0.2);
+      animation: ring-spin 12s linear infinite;
+    }
+    .scene-rozet .badge-ribbon {
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 16px;
+      background: linear-gradient(135deg, #1e3a5f, #2d1550);
+      border-radius: 0 0 8px 8px;
+      border: 1px solid rgba(251, 191, 36, 0.2);
+      border-top: none;
+    }
+    .scene-rozet .badge-ribbon::after {
+      content: 'SINIRLI';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #fbbf24;
+    }
+    @keyframes badge-glow {
+      0% { box-shadow: 0 0 30px rgba(251, 191, 36, 0.2); }
+      100% { box-shadow: 0 0 50px rgba(251, 191, 36, 0.4); }
+    }
+    @keyframes phoenix-glow {
+      0% { filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.4)); }
+      100% { filter: drop-shadow(0 0 16px rgba(251, 191, 36, 0.7)); }
+    }
+
+    /* ===== CHARM SCENE ===== */
+    .scene-charm {
+      --card-hue: 300;
+    }
+    .scene-charm::before {
+      content: '';
+      position: absolute;
+      inset: -20px;
+      background: radial-gradient(circle at center, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+      animation: charm-aura 3s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+    .scene-charm .crystal-ball {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, rgba(192, 132, 252, 0.2), rgba(88, 28, 135, 0.3));
+      border: 1px solid rgba(192, 132, 252, 0.2);
+      animation: float-ease 4s ease-in-out infinite;
+      box-shadow: 0 0 40px rgba(168, 85, 247, 0.15), inset 0 0 40px rgba(192, 132, 252, 0.05);
+    }
+    .scene-charm .crystal-ball::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1) 0%, transparent 50%);
+    }
+    .scene-charm .crystal-inner {
+      position: absolute;
+      inset: 12px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 40% 40%, #a855f7, #7c3aed, #581c87);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: inset 0 0 20px rgba(168, 85, 247, 0.3);
+      animation: inner-pulse 3s ease-in-out infinite alternate;
+    }
+    .scene-charm .crystal-inner::after {
+      content: '✦';
+      font-size: 20px;
+      color: rgba(255,255,255,0.6);
+      animation: star-spin 6s linear infinite;
+    }
+    .scene-charm .crystal-shine {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      width: 16px;
+      height: 16px;
+      background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .scene-charm .crystal-shine-2 {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      width: 8px;
+      height: 8px;
+      background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    @keyframes inner-pulse {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      100% { transform: scale(1.05); opacity: 1; }
+    }
+    @keyframes star-spin {
+      0% { transform: rotate(0deg) scale(1); }
+      50% { transform: rotate(180deg) scale(1.2); }
+      100% { transform: rotate(360deg) scale(1); }
+    }
+    @keyframes charm-aura {
+      0% { opacity: 0.5; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1.1); }
+    }
+
+    /* ===== KOLYE SCENE ===== */
+    .scene-kolye {
+      --card-hue: 150;
+    }
+    .scene-kolye .necklace-display {
+      position: relative;
+      width: 110px;
+      height: 110px;
+    }
+    .scene-kolye .necklace-string {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60%;
+      border: 2px solid rgba(168, 85, 247, 0.15);
+      border-bottom: none;
+      border-radius: 60px 60px 0 0;
+    }
+    .scene-kolye .bead {
+      position: absolute;
+      border-radius: 50%;
+      box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2), 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .scene-kolye .bead-1 {
+      width: 16px; height: 16px;
+      background: radial-gradient(circle at 35% 35%, #6ee7b7, #059669);
+      top: 12px; left: 6px;
+    }
+    .scene-kolye .bead-2 {
+      width: 12px; height: 12px;
+      background: radial-gradient(circle at 35% 35%, #e5e7eb, #9ca3af);
+      top: 4px; left: 32px;
+    }
+    .scene-kolye .bead-3 {
+      width: 18px; height: 18px;
+      background: radial-gradient(circle at 35% 35%, #d4a574, #8b6f47);
+      top: 8px; left: 54px;
+    }
+    .scene-kolye .bead-4 {
+      width: 10px; height: 10px;
+      background: radial-gradient(circle at 35% 35%, #fbbf24, #d97706);
+      top: 18px; left: 80px;
+    }
+    .scene-kolye .pendant {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 36px;
+      height: 44px;
+      background: linear-gradient(180deg, #a855f7, #7c3aed);
+      border-radius: 4px 4px 12px 12px;
+      box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: pendant-swing 3s ease-in-out infinite;
+      transform-origin: top center;
+    }
+    .scene-kolye .pendant::after {
+      content: '⬥';
+      font-size: 18px;
+      color: rgba(255,255,255,0.5);
+    }
+    .scene-kolye .pendant-loop {
+      position: absolute;
+      top: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 6px;
+      border: 1.5px solid #a855f7;
+      border-radius: 50%;
+    }
+    @keyframes pendant-swing {
+      0%, 100% { transform: translateX(-50%) rotate(-3deg); }
+      50% { transform: translateX(-50%) rotate(3deg); }
+    }
+
+    /* ========== CART PANEL ========== */
+    .cart-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+    .cart-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .cart-panel {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 420px;
+      max-width: 100vw;
+      height: 100vh;
+      background: linear-gradient(180deg, #1A0C33 0%, #12082A 100%);
+      border-left: 1px solid rgba(245, 50, 106, 0.1);
+      z-index: 2001;
+      transform: translateX(100%);
+      transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      display: flex;
+      flex-direction: column;
+      box-shadow: -20px 0 60px rgba(0, 0, 0, 0.5);
+    }
+    .cart-panel.open {
+      transform: translateX(0);
+    }
+
+    .cart-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 28px;
+      border-bottom: 1px solid rgba(245, 50, 106, 0.08);
+      flex-shrink: 0;
+    }
+    .cart-header h2 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      letter-spacing: 2px;
+      color: var(--text-primary);
+    }
+    .cart-header h2 span {
+      color: var(--accent);
+    }
+    .cart-close {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(245, 50, 106, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      transition: var(--transition);
+      background: none;
+      cursor: pointer;
+    }
+    .cart-close:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px 28px;
+    }
+    .cart-items::-webkit-scrollbar {
+      width: 4px;
+    }
+    .cart-items::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .cart-items::-webkit-scrollbar-thumb {
+      background: rgba(245, 50, 106, 0.2);
+      border-radius: 4px;
+    }
+
+    .cart-empty {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      color: var(--text-muted);
+      text-align: center;
+      gap: 12px;
+    }
+    .cart-empty svg {
+      width: 64px;
+      height: 64px;
+      opacity: 0.3;
+    }
+    .cart-empty p {
+      font-family: var(--font-jp);
+      font-size: 0.85rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+
+    .cart-item {
+      display: flex;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(245, 50, 106, 0.05);
+      animation: cart-item-in 0.3s ease;
+    }
+    @keyframes cart-item-in {
+      from { opacity: 0; transform: translateX(20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .cart-item-img {
+      width: 64px;
+      height: 64px;
+      border-radius: 12px;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: var(--bg-card);
+      border: 1px solid rgba(245, 50, 106, 0.08);
+    }
+    .cart-item-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cart-item-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+    }
+    .cart-item-name {
+      font-family: var(--font-jp);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .cart-item-price {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--accent);
+      letter-spacing: 1px;
+      margin-top: 4px;
+    }
+
+    .cart-item-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .cart-qty {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 8px;
+      padding: 2px;
+    }
+    .cart-qty button {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      border: none;
+      background: rgba(245, 50, 106, 0.08);
+      color: var(--text-secondary);
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .cart-qty button:hover {
+      background: rgba(245, 50, 106, 0.2);
+      color: var(--text-primary);
+    }
+    .cart-qty span {
+      font-family: var(--font-jp);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      min-width: 24px;
+      text-align: center;
+    }
+
+    .cart-item-remove {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      border: none;
+      background: rgba(245, 50, 106, 0.06);
+      color: var(--text-muted);
+      font-size: 0.7rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .cart-item-remove:hover {
+      background: rgba(245, 50, 106, 0.15);
+      color: var(--accent);
+    }
+
+    .cart-footer {
+      flex-shrink: 0;
+      padding: 20px 28px 28px;
+      border-top: 1px solid rgba(245, 50, 106, 0.08);
+    }
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .cart-total-label {
+      font-family: var(--font-jp);
+      font-size: 0.8rem;
+      font-weight: 300;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+    .cart-total-price {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      color: var(--accent);
+    }
+
+    .cart-checkout {
+      width: 100%;
+      padding: 16px;
+      border-radius: 12px;
+      border: none;
+      background: linear-gradient(135deg, var(--accent), #a855f7);
+      color: #fff;
+      font-family: var(--font-jp);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .cart-checkout:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 40px rgba(245, 50, 106, 0.3);
+    }
+    .cart-checkout:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* ========== SEARCH BAR ========== */
+    .search-bar {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      max-width: 480px;
+      width: 100%;
+      padding: 14px 22px;
+      border-radius: 16px;
+      background: rgba(45, 21, 80, 0.6);
+      backdrop-filter: blur(20px) saturate(1.4);
+      -webkit-backdrop-filter: blur(20px) saturate(1.4);
+      border: 1px solid rgba(168, 85, 247, 0.15);
+      transition: all 0.4s ease;
+      margin-bottom: 28px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .search-bar:focus-within {
+      border-color: rgba(168, 85, 247, 0.5);
+      box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.12), 0 0 40px rgba(168, 85, 247, 0.1), 0 4px 24px rgba(0, 0, 0, 0.2);
+      background: rgba(45, 21, 80, 0.7);
+    }
+
+    .search-bar svg {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      color: var(--text-muted);
+      transition: color 0.3s ease;
+    }
+
+    .search-bar:focus-within svg {
+      color: var(--accent);
+    }
+
+    .search-bar input {
+      flex: 1;
+      border: none;
+      background: none;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 300;
+      outline: none;
+      min-width: 0;
+    }
+
+    .search-bar input::placeholder {
+      color: rgba(136, 112, 168, 0.5);
+      font-weight: 300;
+      font-size: 0.85rem;
+    }
+
+    .search-bar .search-clear {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(245, 50, 106, 0.08);
+      color: var(--text-muted);
+      font-size: 0.7rem;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .search-bar .search-clear:hover {
+      background: rgba(245, 50, 106, 0.2);
+      color: var(--text-primary);
+    }
+
+    .search-bar .search-clear.visible {
+      display: flex;
     }
 
     /* ========== PRODUCTS ========== */
@@ -830,147 +1886,714 @@
       box-shadow: 0 0 20px var(--accent-glow);
     }
 
-    /* ========== BRAND ========== */
-    .brand {
+    /* ========== ABOUT / BRAND ========== */
+    .about {
       padding: 120px 0;
       background: var(--bg-secondary);
       position: relative;
       overflow: hidden;
     }
 
-    .brand::before {
+    .about::before {
       content: '';
       position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(245, 50, 106, 0.06) 0%, transparent 70%);
+      inset: 0;
+      background:
+        radial-gradient(ellipse 500px 300px at 20% 20%, rgba(168, 85, 247, 0.05) 0%, transparent 70%),
+        radial-gradient(ellipse 400px 400px at 80% 80%, rgba(245, 50, 106, 0.04) 0%, transparent 70%);
       pointer-events: none;
     }
 
-    .brand-grid {
+    /* floating stardust */
+    .about-stars {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .about-stars span {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: rgba(168, 85, 247, 0.3);
+      border-radius: 50%;
+      animation: star-drift 8s ease-in-out infinite;
+    }
+    .about-stars span:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; width: 2px; height: 2px; }
+    .about-stars span:nth-child(2) { top: 30%; left: 75%; animation-delay: 1.2s; width: 4px; height: 4px; background: rgba(251, 191, 36, 0.2); }
+    .about-stars span:nth-child(3) { top: 55%; left: 10%; animation-delay: 2.5s; }
+    .about-stars span:nth-child(4) { top: 70%; left: 85%; animation-delay: 0.8s; width: 2px; height: 2px; }
+    .about-stars span:nth-child(5) { top: 85%; left: 40%; animation-delay: 3.5s; width: 3px; height: 3px; background: rgba(245, 50, 106, 0.25); }
+    .about-stars span:nth-child(6) { top: 15%; left: 55%; animation-delay: 1.8s; width: 2px; height: 2px; }
+    .about-stars span:nth-child(7) { top: 45%; left: 50%; animation-delay: 4s; width: 4px; height: 4px; background: rgba(168, 85, 247, 0.15); }
+    .about-stars span:nth-child(8) { top: 90%; left: 20%; animation-delay: 2.2s; }
+    .about-stars span:nth-child(9) { top: 5%; left: 90%; animation-delay: 3s; width: 2px; height: 2px; background: rgba(251, 191, 36, 0.15); }
+    .about-stars span:nth-child(10) { top: 60%; left: 30%; animation-delay: 1.5s; width: 3px; height: 3px; }
+    @keyframes star-drift {
+      0%, 100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.3; }
+      25% { transform: translateY(-20px) translateX(10px) scale(1.2); opacity: 0.7; }
+      50% { transform: translateY(-10px) translateX(-10px) scale(0.9); opacity: 0.4; }
+      75% { transform: translateY(-30px) translateX(5px) scale(1.1); opacity: 0.6; }
+    }
+
+    /* ===== Hero Intro ===== */
+    .about-hero {
+      text-align: center;
+      margin-bottom: 80px;
+      position: relative;
+    }
+
+    .about-hero h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      letter-spacing: 3px;
+      line-height: 1.05;
+      color: var(--text-primary);
+    }
+
+    .about-hero h2 .glow {
+      background: linear-gradient(135deg, var(--accent) 0%, #a855f7 50%, #fbbf24 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 40px rgba(245, 50, 106, 0.2));
+    }
+
+    .about-hero p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      font-weight: 300;
+      max-width: 580px;
+      margin: 16px auto 0;
+      line-height: 1.8;
+    }
+
+    /* ===== Story Cards (Glassmorphism) ===== */
+    .about-story {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
+      gap: 32px;
+      margin-bottom: 100px;
     }
 
-    .brand-text .section-sub {
-      margin-top: 16px;
-      line-height: 1.9;
-      max-width: 500px;
-    }
-
-    .brand-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .brand-stat {
-      text-align: center;
-      padding: 32px 16px;
-      background: var(--bg-card);
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--border);
-      transition: var(--transition);
-    }
-
-    .brand-stat:hover {
-      border-color: rgba(255, 87, 51, 0.2);
-      transform: translateY(-2px);
-    }
-
-    .brand-stat-number {
-      font-family: var(--font-display);
-      font-size: 2.2rem;
-      letter-spacing: 2px;
-      color: var(--accent);
-      line-height: 1;
-    }
-
-    .brand-stat-label {
-      font-family: var(--font-jp);
-      font-size: 0.7rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-top: 8px;
-    }
-
-    /* ========== NEWSLETTER ========== */
-    .newsletter {
-      padding: 100px 0;
-      text-align: center;
-    }
-
-    .newsletter-box {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 60px 40px;
-      background: var(--bg-card);
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
+    .about-card {
+      background: rgba(45, 21, 80, 0.3);
+      backdrop-filter: blur(20px) saturate(1.3);
+      -webkit-backdrop-filter: blur(20px) saturate(1.3);
+      border: 1px solid rgba(245, 50, 106, 0.08);
+      border-radius: 24px;
+      padding: 44px 36px;
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
       position: relative;
       overflow: hidden;
     }
 
-    .newsletter-box::before {
+    .about-card::before {
       content: '';
       position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle at center, rgba(245, 50, 106, 0.04) 0%, transparent 50%);
+      inset: 0;
+      background: radial-gradient(circle at var(--mx, 50%) var(--my, 0%), rgba(168, 85, 247, 0.06) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
       pointer-events: none;
     }
 
-    .newsletter-box * {
+    .about-card:hover::before {
+      opacity: 1;
+    }
+
+    .about-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(168, 85, 247, 0.25);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 40px rgba(168, 85, 247, 0.05);
+    }
+
+    .about-card * {
       position: relative;
       z-index: 1;
     }
 
-    .newsletter-box .section-title {
-      font-size: clamp(2rem, 4vw, 3rem);
+    .about-card-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      display: block;
     }
 
-    .newsletter-box p {
+    .about-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .about-card h3 span {
+      color: var(--accent);
+    }
+
+    .about-card p {
       color: var(--text-secondary);
-      margin: 12px 0 32px;
+      font-size: 0.9rem;
       font-weight: 300;
+      line-height: 1.8;
     }
 
-    .newsletter-form {
+    /* ===== Team Section ===== */
+    .about-team-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .about-team-header .section-title {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+    }
+
+    .about-team {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .team-card {
+      background: linear-gradient(165deg, rgba(45, 21, 80, 0.6), rgba(26, 12, 51, 0.8));
+      border-radius: 20px;
+      border: 1px solid rgba(245, 50, 106, 0.08);
+      padding: 36px 32px;
       display: flex;
-      gap: 12px;
-      max-width: 440px;
-      margin: 0 auto;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
     }
 
-    .newsletter-form input {
-      flex: 1;
-      padding: 14px 20px;
+    .team-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(168, 85, 247, 0.06) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+
+    .team-card:hover::before {
+      opacity: 1;
+    }
+
+    .team-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(168, 85, 247, 0.2);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    }
+
+    .team-card * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .team-logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .team-logo.founder {
+      background: linear-gradient(135deg, rgba(245, 50, 106, 0.15), rgba(168, 85, 247, 0.15));
+      border: 1px solid rgba(245, 50, 106, 0.2);
+      box-shadow: 0 0 30px rgba(245, 50, 106, 0.06);
+    }
+
+    .team-logo.founder svg {
+      width: 40px;
+      height: 40px;
+    }
+
+    .team-logo.dev {
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.12), rgba(251, 191, 36, 0.1));
+      border: 1px solid rgba(168, 85, 247, 0.15);
+      box-shadow: 0 0 30px rgba(168, 85, 247, 0.06);
+    }
+
+    .team-logo.dev svg {
+      width: 36px;
+      height: 36px;
+    }
+
+    .team-card .team-role {
+      font-family: var(--font-jp);
+      font-size: 0.65rem;
+      font-weight: 300;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .team-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      letter-spacing: 2px;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .team-card p {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      font-weight: 300;
+      line-height: 1.7;
+      max-width: 280px;
+    }
+
+    .team-card .team-tag {
+      margin-top: 16px;
+      padding: 6px 16px;
       border-radius: 100px;
-      border: 1px solid var(--border);
-      background: var(--bg-primary);
+      border: 1px solid rgba(245, 50, 106, 0.1);
+      font-family: var(--font-jp);
+      font-size: 0.6rem;
+      font-weight: 300;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+    }
+
+    /* ========== CONTACT ========== */
+    .contact {
+      padding: 120px 0;
+      background: var(--bg-secondary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 600px 400px at 15% 30%, rgba(168, 85, 247, 0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 500px 500px at 85% 70%, rgba(245, 50, 106, 0.05) 0%, transparent 70%),
+        radial-gradient(ellipse 300px 300px at 50% 50%, rgba(251, 191, 36, 0.03) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      position: relative;
+    }
+
+    /* ===== LEFT: Info & Bird ===== */
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .contact-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      letter-spacing: 2px;
+      line-height: 1.05;
+      color: var(--text-primary);
+    }
+
+    .contact-heading .glow {
+      background: linear-gradient(135deg, var(--accent) 0%, #a855f7 50%, #fbbf24 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 30px rgba(245, 50, 106, 0.2));
+    }
+
+    .contact-desc {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.8;
+      max-width: 440px;
+    }
+
+    /* ===== Messenger Bird ===== */
+    .contact-bird {
+      position: relative;
+      width: 240px;
+      height: 200px;
+      margin: 16px 0;
+    }
+
+    .bird-body {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 80px;
+      background: linear-gradient(180deg, #2d1b4e, #1a0c33);
+      border-radius: 50% 50% 40% 40%;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 -20px 40px rgba(0,0,0,0.2);
+      animation: bird-breathe 3s ease-in-out infinite;
+    }
+    .bird-body::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 40px;
+      background: linear-gradient(180deg, #3d226a, #2d1b4e);
+      border-radius: 50% 50% 0 0;
+    }
+    .bird-body::after {
+      content: '';
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 8px;
+      background: radial-gradient(circle, #a855f7, #7c3aed);
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.5), 0 0 40px rgba(168, 85, 247, 0.2);
+      animation: bird-eye-glow 2s ease-in-out infinite alternate;
+    }
+
+    .bird-wing {
+      position: absolute;
+      bottom: 40px;
+      width: 55px;
+      height: 70px;
+      background: linear-gradient(180deg, #3d226a, #2d1b4e);
+      border-radius: 20% 80% 20% 80% / 60% 40% 60% 40%;
+      transform-origin: center bottom;
+      animation: wing-flap-bird 2.5s ease-in-out infinite;
+    }
+    .bird-wing.left {
+      left: 8px;
+      transform: rotate(30deg) scaleX(-1);
+    }
+    .bird-wing.right {
+      right: 8px;
+      transform: rotate(-30deg);
+      animation-delay: 0.1s;
+    }
+
+    .bird-tail {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 30px;
+      background: linear-gradient(180deg, #2d1b4e, #1a0c33);
+      border-radius: 0 0 20px 20px;
+    }
+    .bird-tail::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: -10px;
+      right: -10px;
+      height: 20px;
+      background: #2d1b4e;
+      clip-path: polygon(0 0, 50% 100%, 100% 0);
+    }
+
+    .bird-beak {
+      position: absolute;
+      top: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 16px solid #a855f7;
+      z-index: 2;
+    }
+
+    /* Glowing envelope in beak */
+    .bird-letter {
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 32px;
+      height: 24px;
+      background: linear-gradient(135deg, #fbbf24, #f59e0b);
+      border-radius: 3px;
+      z-index: 3;
+      box-shadow: 0 0 30px rgba(251, 191, 36, 0.4), 0 0 60px rgba(251, 191, 36, 0.15);
+      animation: letter-glow 2s ease-in-out infinite alternate;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .bird-letter::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.3), transparent 50%);
+      clip-path: polygon(0 0, 50% 60%, 100% 0, 100% 100%, 0 100%);
+    }
+    .bird-letter::after {
+      content: '✦';
+      font-size: 10px;
+      color: #92400e;
+      position: relative;
+      z-index: 1;
+    }
+
+    .bird-legs {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 16px;
+    }
+    .bird-legs::before,
+    .bird-legs::after {
+      content: '';
+      width: 2px;
+      height: 18px;
+      background: linear-gradient(to top, #a855f7, transparent);
+      border-radius: 1px;
+    }
+
+    @keyframes bird-breathe {
+      0%, 100% { transform: translateX(-50%) scaleY(1); }
+      50% { transform: translateX(-50%) scaleY(1.03); }
+    }
+    @keyframes wing-flap-bird {
+      0%, 100% { transform: var(--wing-start, rotate(30deg) scaleX(-1)); }
+      50% { transform: var(--wing-mid, rotate(20deg) scaleX(-1)); }
+    }
+    @keyframes bird-eye-glow {
+      0% { box-shadow: 0 0 20px rgba(168, 85, 247, 0.3); }
+      100% { box-shadow: 0 0 40px rgba(168, 85, 247, 0.6); }
+    }
+    @keyframes letter-glow {
+      0% { box-shadow: 0 0 20px rgba(251, 191, 36, 0.3); }
+      100% { box-shadow: 0 0 50px rgba(251, 191, 36, 0.6); }
+    }
+
+    /* ===== Social Links ===== */
+    .contact-socials {
+      display: flex;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .contact-social-link {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(245, 50, 106, 0.1);
+      background: rgba(255, 255, 255, 0.03);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      transition: all 0.4s ease;
+      position: relative;
+    }
+
+    .contact-social-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      box-shadow: 0 0 30px var(--accent-glow);
+      transform: translateY(-3px);
+      background: rgba(245, 50, 106, 0.06);
+    }
+
+    .contact-social-link.trendyol {
+      color: #f94d00;
+      border-color: rgba(249, 77, 0, 0.2);
+      background: rgba(249, 77, 0, 0.06);
+    }
+
+    .contact-social-link.trendyol:hover {
+      color: #fff;
+      border-color: #f94d00;
+      background: #f94d00;
+      box-shadow: 0 0 30px rgba(249, 77, 0, 0.4);
+      transform: translateY(-3px);
+    }
+
+    /* ===== RIGHT: Form ===== */
+    .contact-form-wrap {
+      position: relative;
+    }
+
+    .contact-form-card {
+      background: rgba(45, 21, 80, 0.35);
+      backdrop-filter: blur(24px) saturate(1.4);
+      -webkit-backdrop-filter: blur(24px) saturate(1.4);
+      border: 1px solid rgba(245, 50, 106, 0.1);
+      border-radius: 24px;
+      padding: 48px 40px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-form-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 70% 30%, rgba(168, 85, 247, 0.04) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .contact-form-card * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-form-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .contact-form-sub {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      font-weight: 300;
+      margin-bottom: 28px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .contact-form .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .contact-form .field-group label {
+      font-family: var(--font-jp);
+      font-size: 0.7rem;
+      font-weight: 300;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1px solid rgba(245, 50, 106, 0.08);
+      background: rgba(26, 12, 51, 0.6);
       color: var(--text-primary);
       font-family: var(--font-body);
       font-size: 0.9rem;
       outline: none;
-      transition: var(--transition);
+      transition: all 0.3s ease;
+      resize: vertical;
     }
 
-    .newsletter-form input:focus {
+    .contact-form input:focus,
+    .contact-form textarea:focus {
       border-color: var(--accent);
-      box-shadow: 0 0 20px var(--accent-glow);
+      box-shadow: 0 0 0 3px rgba(245, 50, 106, 0.12), 0 0 30px rgba(245, 50, 106, 0.08);
+      background: rgba(26, 12, 51, 0.8);
     }
 
-    .newsletter-form input::placeholder {
-      color: var(--text-muted);
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: rgba(136, 112, 168, 0.5);
       font-weight: 300;
+    }
+
+    .contact-form textarea {
+      min-height: 110px;
+    }
+
+    .contact-form .fun-field {
+      position: relative;
+    }
+
+    .contact-form .fun-field input {
+      padding-left: 40px;
+    }
+
+    .contact-form .fun-field .fun-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.1rem;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .contact-submit {
+      width: 100%;
+      padding: 16px 32px;
+      border-radius: 12px;
+      border: none;
+      background: linear-gradient(135deg, var(--accent) 0%, #a855f7 50%, #fbbf24 100%);
+      background-size: 200% 200%;
+      color: #fff;
+      font-family: var(--font-jp);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      margin-top: 4px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-submit:hover {
+      background-position: right center;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 40px rgba(245, 50, 106, 0.25);
+    }
+
+    .contact-submit:active {
+      transform: translateY(1px) scale(0.98);
+      box-shadow: none;
+    }
+
+    .contact-submit::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.05) 50%, transparent 100%);
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+    }
+
+    .contact-submit:hover::after {
+      transform: translateX(100%);
     }
 
     /* ========== FOOTER ========== */
@@ -1103,19 +2726,80 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
+      .category-card {
+        flex-direction: column;
+      }
+
+      .card-scene {
+        flex: unset;
+        width: 100%;
+        min-height: 180px;
+        border-radius: 20px 20px 0 0;
+      }
+
+      .card-scene-inner {
+        width: 120px;
+        height: 120px;
+      }
+
+      .card-content {
+        padding: 24px 20px;
+        text-align: center;
+      }
+
+      .card-content h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .category-card:hover .card-content h3::after {
+        width: 60px;
+      }
+
       .products-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .brand-grid {
+      .about-story,
+      .about-team {
         grid-template-columns: 1fr;
-        gap: 48px;
-        text-align: center;
+        gap: 24px;
       }
 
-      .brand-text .section-sub {
-        margin-left: auto;
-        margin-right: auto;
+      .about-card {
+        padding: 32px 28px;
+      }
+
+      .about-card h3 {
+        font-size: 1.3rem;
+      }
+
+      .team-card {
+        padding: 28px 24px;
+      }
+
+      .search-bar {
+        max-width: 100%;
+        padding: 10px 16px;
+      }
+
+      .search-bar input {
+        font-size: 0.82rem;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .contact-bird {
+        width: 180px;
+        height: 160px;
+        margin: 0 auto;
+      }
+
+      .contact-form-card {
+        padding: 36px 24px;
       }
 
       .footer-grid {
@@ -1148,18 +2832,57 @@
 
       .categories-grid {
         grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .category-card {
+        flex-direction: row;
+      }
+
+      .card-scene {
+        flex: 0 0 140px;
+        min-height: 160px;
+        border-radius: 20px 0 0 20px;
+      }
+
+      .card-scene-inner {
+        width: 100px;
+        height: 100px;
+      }
+
+      .card-content {
+        padding: 20px 16px;
+        text-align: left;
+      }
+
+      .card-content h3 {
+        font-size: 1.3rem;
+      }
+
+      .card-content h3::after {
+        left: 0;
+        transform: none;
+      }
+
+      .card-content p {
+        font-size: 0.78rem;
       }
 
       .products-grid {
         grid-template-columns: 1fr;
       }
 
-      .brand-stats {
-        grid-template-columns: repeat(2, 1fr);
+      .about-team {
+        grid-template-columns: 1fr;
+        gap: 20px;
       }
 
-      .newsletter-form {
-        flex-direction: column;
+      .about-card {
+        padding: 28px 20px;
+      }
+
+      .about-hero h2 {
+        font-size: clamp(2rem, 8vw, 2.8rem);
       }
 
       .products-header {
@@ -1169,6 +2892,33 @@
 
       .footer-grid {
         grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .contact-info {
+        text-align: center;
+        align-items: center;
+      }
+
+      .contact-desc {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .contact-socials {
+        justify-content: center;
+      }
+
+      .contact-form-card {
+        padding: 28px 20px;
+      }
+
+      .contact-form-title {
+        font-size: 1.2rem;
       }
 
       .footer-bottom {
@@ -1184,18 +2934,38 @@
   <!-- ========== NAV ========== -->
   <nav class="nav" id="nav">
     <div class="container">
-      <a href="#" class="nav-logo" style="display:flex;align-items:center;gap:12px;">
-        <img src="https://i.ibb.co/vvRRdbWv/haraco-logo.jpg" alt="HaraCo" style="height:48px;width:48px;border-radius:50%;object-fit:cover;display:block;flex-shrink:0;" />
+      <a href="#" class="nav-logo" style="display:flex;align-items:center;gap:12px;" aria-label="HaraCo Ana Sayfa">
+        <img src="https://i.ibb.co/vvRRdbWv/haraco-logo.jpg" alt="HaraCo logosu" loading="lazy" style="height:48px;width:48px;border-radius:50%;object-fit:cover;display:block;flex-shrink:0;" />
         <span style="display:flex;flex-direction:column;">
           <span style="font-family:var(--font-display);font-size:1.8rem;letter-spacing:3px;line-height:1;color:var(--text-primary);">Hara<span style="color:var(--accent);">Co</span></span>
           <small style="font-family:var(--font-jp);font-size:0.55rem;font-weight:300;letter-spacing:1px;color:var(--text-muted);display:block;margin-top:-2px;">彩りのコレクション</small>
         </span>
       </a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#shop">Market</a></li>
-        <li><a href="#categories">Koleksiyonlar</a></li>
-        <li><a href="#brand">Hakkımızda</a></li>
-        <li><a href="#contact">İletişim</a></li>
+        <li><a href="#shop" data-tr="Market" data-en="Shop">Market</a></li>
+        <li><a href="#categories" data-tr="Koleksiyonlar" data-en="Collections">Koleksiyonlar</a></li>
+        <li><a href="#brand" data-tr="Hakkımızda" data-en="About">Hakkımızda</a></li>
+        <li><a href="#contact" data-tr="İletişim" data-en="Contact">İletişim</a></li>
+        <li>
+          <button class="nav-lang" id="navLang" aria-label="Dil değiştir / Switch language" title="TR / EN">TR</button>
+        </li>
+        <li>
+          <button class="nav-theme" id="navTheme" aria-label="Tema değiştir" title="Tema değiştir">
+            <svg class="theme-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+            <svg class="theme-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button class="nav-search-icon" id="navSearchIcon" aria-label="Ara">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </button>
+        </li>
         <li>
           <button class="nav-cart" aria-label="Sepet">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
@@ -1214,6 +2984,7 @@
     </div>
   </nav>
 
+  <main>
   <!-- ========== HERO ========== -->
   <section class="hero">
     <div class="hero-bg"></div>
@@ -1221,19 +2992,19 @@
       <div class="hero-text">
         <div class="hero-badge">
           <span class="hero-badge-dot"></span>
-          Yeni Koleksiyon 2026
+          <span data-tr="Yeni Koleksiyon 2026" data-en="New Collection 2026">Yeni Koleksiyon 2026</span>
         </div>
         <h1>
-          Benzersiz<br />
-          <span class="line-2">Olanı Yakala</span>
+          <span data-tr="Benzersiz" data-en="Catch the">Benzersiz</span><br />
+          <span class="line-2" data-tr="Olanı Yakala" data-en="Extraordinary">Olanı Yakala</span>
         </h1>
-        <p>
+        <p data-tr="Dünyayı tüm renkleriyle yaşayanlara özel, premium anime koleksiyon parçaları. Figürlerden anahtarlıklara ve çıkartmalara — her bir parça kendi hikayesini anlatıyor." data-en="Premium anime collection pieces for those who experience the world in all its colors. From figures to keychains and stickers — each piece tells its own story.">
           Dünyayı tüm renkleriyle yaşayanlara özel, premium anime koleksiyon parçaları.
           Figürlerden anahtarlıklara ve çıkartmalara — her bir parça kendi hikayesini anlatıyor.
         </p>
         <div class="hero-actions">
-          <a href="#shop" class="btn btn-primary">Mağazayı Keşfet</a>
-          <a href="#categories" class="btn btn-outline">Koleksiyonları İncele</a>
+          <a href="#shop" class="btn btn-primary" data-tr="Mağazayı Keşfet" data-en="Explore Shop">Mağazayı Keşfet</a>
+          <a href="#categories" class="btn btn-outline" data-tr="Koleksiyonları İncele" data-en="View Collections">Koleksiyonları İncele</a>
         </div>
       </div>
       <div class="hero-visual">
@@ -1243,7 +3014,7 @@
         <div class="hero-product">
           <div class="hero-product-glow"></div>
           <div class="hero-product-content">
-            <div class="hero-product-emoji"><img src="https://i.ibb.co/8D8XKLCj/image.png" alt="Sınırlı Üretim" style="width:100%;height:100%;object-fit:cover;border-radius:24px;" /></div>
+            <div class="hero-product-emoji"><img src="https://i.ibb.co/8D8XKLCj/image.png" alt="Sınırlı Üretim Koleksiyon Ürünü" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:24px;" /></div>
             <div class="hero-product-label">Sınırlı Üretim</div>
             <div class="hero-product-price">314.99 TL</div>
           </div>
@@ -1256,41 +3027,116 @@
   <section class="categories" id="categories">
     <div class="container">
       <div class="categories-header reveal">
-        <span class="section-label">Koleksiyonlar</span>
-        <h2 class="section-title">Kategorilere Göz At</h2>
-        <p class="section-sub" style="margin:12px auto 0;">Özenle seçilmiş koleksiyonumuzdan bir sonraki favori parçanı keşfet.
+        <span class="section-label" data-tr="Koleksiyonlar" data-en="Collections">Koleksiyonlar</span>
+        <h2 class="section-title" data-tr="Kategorilere Göz At" data-en="Browse Categories">Kategorilere Göz At</h2>
+        <p class="section-sub" style="margin:12px auto 0;" data-tr="Özenle seçilmiş koleksiyonumuzdan bir sonraki favori parçanı keşfet." data-en="Discover your next favorite piece from our carefully curated collection.">Özenle seçilmiş koleksiyonumuzdan bir sonraki favori parçanı keşfet.
         </p>
       </div>
       <div class="categories-grid">
-          <div class="category-card reveal reveal-delay-1">
-          <div class="category-icon">🗿</div>
-          <h3>Figürler</h3>
-          <p>İkonik kahramanlardan özgün tasarımlara, titiz detaylarla el boyaması reçine figürler.</p>
+        <div class="category-card reveal reveal-delay-1" data-category="figures" style="--card-glow:rgba(168,85,247,0.2);--card-accent:#a855f7;">
+          <div class="card-scene scene-figures">
+            <div class="card-scene-inner">
+              <div class="figurine-glow"></div>
+              <div class="figurine-wings left" style="--wing-angle:25deg;"></div>
+              <div class="figurine-wings right" style="--wing-angle:-25deg;"></div>
+              <div class="figurine-body"></div>
+              <div class="figurine-base"></div>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3 data-tr="Figürler" data-en="Figures">Figürler</h3>
+            <p data-tr="İkonik kahramanlardan özgün tasarımlara, titiz detaylarla el boyaması reçine figürler." data-en="From iconic heroes to original designs, hand-painted resin figures with meticulous detail.">İkonik kahramanlardan özgün tasarımlara, titiz detaylarla el boyaması reçine figürler.</p>
+          </div>
         </div>
-        <div class="category-card reveal reveal-delay-2">
-          <div class="category-icon">🔗</div>
-          <h3>Anahtarlıklar</h3>
-          <p>Günlük taşımanız için minyatür sanat eserleri. Akrilik, metal ve emaye kaplamalar.</p>
+        <div class="category-card reveal reveal-delay-2" data-category="keychains" style="--card-glow:rgba(251,191,36,0.2);--card-accent:#fbbf24;">
+          <div class="card-scene scene-keychains">
+            <div class="card-scene-inner">
+              <div class="keyring-main">
+                <div class="keyring-ring"></div>
+                <div class="keyring-ring-2"></div>
+                <div class="keyring-charm"></div>
+                <div class="keyring-sparkle"></div>
+                <div class="keyring-sparkle"></div>
+                <div class="keyring-sparkle"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3 data-tr="Anahtarlıklar" data-en="Keychains">Anahtarlıklar</h3>
+            <p data-tr="Günlük taşımanız için minyatür sanat eserleri. Akrilik, metal ve emaye kaplamalar." data-en="Miniature works of art for your everyday carry. Acrylic, metal and enamel finishes.">Günlük taşımanız için minyatür sanat eserleri. Akrilik, metal ve emaye kaplamalar.</p>
+          </div>
         </div>
-        <div class="category-card reveal reveal-delay-3">
-          <div class="category-icon">✨</div>
-          <h3>Çıkartmalar</h3>
-          <p>Canlı, dayanıklı vinil çıkartmalar. Su geçirmez ve dünyanızı süslemeye hazır.</p>
+        <div class="category-card reveal reveal-delay-3" data-category="stickers" style="--card-glow:rgba(6,182,212,0.2);--card-accent:#06b6d4;">
+          <div class="card-scene scene-stickers">
+            <div class="card-scene-inner">
+              <div class="sticker-stack">
+                <div class="sticker-layer sticker-layer-1"></div>
+                <div class="sticker-layer sticker-layer-2"></div>
+                <div class="sticker-layer sticker-layer-3">
+                  <div class="sticker-holo"></div>
+                </div>
+                <div class="sticker-surface"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3 data-tr="Çıkartmalar" data-en="Stickers">Çıkartmalar</h3>
+            <p data-tr="Canlı, dayanıklı vinil çıkartmalar. Su geçirmez ve dünyanızı süslemeye hazır." data-en="Vibrant, durable vinyl stickers. Waterproof and ready to decorate your world.">Canlı, dayanıklı vinil çıkartmalar. Su geçirmez ve dünyanızı süslemeye hazır.</p>
+          </div>
         </div>
-        <div class="category-card reveal reveal-delay-1">
-          <div class="category-icon">🎖️</div>
-          <h3>Rozet</h3>
-          <p>Özel tasarım rozetler. Kaliteli metal ve emaye işçiliğiyle koleksiyonuna değer kat.</p>
+        <div class="category-card reveal reveal-delay-1" data-category="rozet" style="--card-glow:rgba(251,191,36,0.2);--card-accent:#fbbf24;">
+          <div class="card-scene scene-rozet">
+            <div class="card-scene-inner">
+              <div class="badge-container">
+                <div class="badge-outer">
+                  <div class="badge-inner">
+                    <div class="badge-dots"></div>
+                    <span class="badge-phoenix">🦅</span>
+                  </div>
+                </div>
+                <div class="badge-ribbon"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3 data-tr="Rozet" data-en="Badges">Rozet</h3>
+            <p data-tr="Özel tasarım rozetler. Kaliteli metal ve emaye işçiliğiyle koleksiyonuna değer kat." data-en="Custom design badges. Add value to your collection with quality metal and enamel craftsmanship.">Özel tasarım rozetler. Kaliteli metal ve emaye işçiliğiyle koleksiyonuna değer kat.</p>
+          </div>
         </div>
-        <div class="category-card reveal reveal-delay-2">
-          <div class="category-icon">🔮</div>
-          <h3>Charm</h3>
-          <p>Her gün yanında taşıyacağın minyatür sanat eserleri. Akrilik ve metal seçenekler.</p>
+        <div class="category-card reveal reveal-delay-2" data-category="charm" style="--card-glow:rgba(168,85,247,0.3);--card-accent:#a855f7;">
+          <div class="card-scene scene-charm">
+            <div class="card-scene-inner">
+              <div class="crystal-ball">
+                <div class="crystal-inner"></div>
+                <div class="crystal-shine"></div>
+                <div class="crystal-shine-2"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3 data-tr="Charm" data-en="Charms">Charm</h3>
+            <p data-tr="Her gün yanında taşıyacağın minyatür sanat eserleri. Akrilik ve metal seçenekler." data-en="Miniature art pieces you'll carry every day. Acrylic and metal options.">Her gün yanında taşıyacağın minyatür sanat eserleri. Akrilik ve metal seçenekler.</p>
+          </div>
         </div>
-        <div class="category-card reveal reveal-delay-3">
-          <div class="category-icon">📿</div>
-          <h3>Kolye</h3>
-          <p>Tarzını tamamlayacak özgün kolye tasarımları. Her parça bir hikaye anlatır.</p>
+        <div class="category-card reveal reveal-delay-3" data-category="kolye" style="--card-glow:rgba(16,185,129,0.2);--card-accent:#10b981;">
+          <div class="card-scene scene-kolye">
+            <div class="card-scene-inner">
+              <div class="necklace-display">
+                <div class="necklace-string"></div>
+                <div class="bead bead-1"></div>
+                <div class="bead bead-2"></div>
+                <div class="bead bead-3"></div>
+                <div class="bead bead-4"></div>
+                <div class="pendant">
+                  <div class="pendant-loop"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3 data-tr="Kolye" data-en="Necklaces">Kolye</h3>
+            <p data-tr="Tarzını tamamlayacak özgün kolye tasarımları. Her parça bir hikaye anlatır." data-en="Unique necklace designs to complete your style. Each piece tells a story.">Tarzını tamamlayacak özgün kolye tasarımları. Her parça bir hikaye anlatır.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1301,67 +3147,175 @@
     <div class="container">
       <div class="products-header reveal">
         <div>
-          <span class="section-label">Öne Çıkanlar</span>
-          <h2 class="section-title">Yeni Gelenler</h2>
+          <span class="section-label" data-tr="Öne Çıkanlar" data-en="Featured">Öne Çıkanlar</span>
+          <h2 class="section-title" data-tr="Yeni Gelenler" data-en="New Arrivals">Yeni Gelenler</h2>
         </div>
         <div class="products-filters" id="filters">
-          <button class="filter-btn active" data-filter="all">Tümü</button>
-          <button class="filter-btn" data-filter="figures">Figürler</button>
-          <button class="filter-btn" data-filter="keychains">Anahtarlıklar</button>
-          <button class="filter-btn" data-filter="stickers">Çıkartmalar</button>
-          <button class="filter-btn" data-filter="rozet">Rozet</button>
-          <button class="filter-btn" data-filter="charm">Charm</button>
-          <button class="filter-btn" data-filter="kolye">Kolye</button>
+          <button class="filter-btn active" data-filter="all" data-tr="Tümü" data-en="All">Tümü</button>
+          <button class="filter-btn" data-filter="figures" data-tr="Figürler" data-en="Figures">Figürler</button>
+          <button class="filter-btn" data-filter="keychains" data-tr="Anahtarlıklar" data-en="Keychains">Anahtarlıklar</button>
+          <button class="filter-btn" data-filter="stickers" data-tr="Çıkartmalar" data-en="Stickers">Çıkartmalar</button>
+          <button class="filter-btn" data-filter="rozet" data-tr="Rozet" data-en="Badges">Rozet</button>
+          <button class="filter-btn" data-filter="charm" data-tr="Charm" data-en="Charms">Charm</button>
+          <button class="filter-btn" data-filter="kolye" data-tr="Kolye" data-en="Necklaces">Kolye</button>
         </div>
+      </div>
+      <div class="search-bar" id="searchBar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="search" id="searchInput" placeholder="Karakter, ürün veya seri ara... (Örn: Zoro, Rozet)" autocomplete="off" aria-label="Ürün ara" data-tr="Karakter, ürün veya seri ara... (Örn: Zoro, Rozet)" data-en="Search character, product or series... (e.g. Zoro, Badge)" />
+        <button class="search-clear" id="searchClear" aria-label="Temizle">✕</button>
       </div>
       <div class="products-grid" id="productsGrid"></div>
     </div>
   </section>
 
-  <!-- ========== BRAND ========== -->
-  <section class="brand" id="brand">
-    <div class="container brand-grid">
-      <div class="brand-text reveal">
-        <span class="section-label">Hikayemiz</span>
-        <h2 class="section-title">Tutkudan Doğdu</h2>
-        <p class="section-sub">
-          HaraCo, koleksiyonerler tarafından koleksiyonerler için kuruldu. Kataloğumuzdaki her parça
-          sanatı, işçiliği ve neşe uyandırma yeteneğiyle seçilir. Japonya ve Kore'deki bağımsız
-          sanatçılarla ortaklık yaparak başka hiçbir yerde bulamayacağınız özel tasarımlar sunuyoruz.
-        </p>
-      </div>
-      <div class="brand-stats">
-        <div class="brand-stat reveal reveal-delay-1">
-          <div class="brand-stat-number">500+</div>
-          <div class="brand-stat-label">Özgün Tasarım</div>
-        </div>
-        <div class="brand-stat reveal reveal-delay-2">
-          <div class="brand-stat-number">15K</div>
-          <div class="brand-stat-label">Mutlu Koleksiyoner</div>
-        </div>
-        <div class="brand-stat reveal reveal-delay-3">
-          <div class="brand-stat-number">4.9</div>
-          <div class="brand-stat-label">Ortalama Puan</div>
-        </div>
-      </div>
+  <!-- ========== ABOUT / BRAND ========== -->
+  <section class="about" id="brand">
+    <div class="about-stars">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
     </div>
-  </section>
-
-  <!-- ========== NEWSLETTER ========== -->
-  <section class="newsletter" id="contact">
     <div class="container">
-      <div class="newsletter-box reveal">
-        <span class="section-label">Bağlantıda Kal</span>
-        <h2 class="section-title">Topluluğa Katıl</h2>
-        <p>Yeni ürünler, özel ön siparişler ve üyelere özel fiyatlardan ilk sen haberdar ol.</p>
-        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('HaraCo\'ya hoş geldiniz! 🎉');">
-          <input type="email" placeholder="E-posta adresini gir" required />
-          <button class="btn btn-primary" type="submit">Abone Ol</button>
-        </form>
+      <!-- Hero Intro -->
+      <div class="about-hero reveal">
+        <span class="section-label" data-tr="Hakkımızda" data-en="About Us">Hakkımızda</span>
+        <h2>Haraco: <span class="glow" data-tr="Tutkudan Gerçekliğe" data-en="Passion into Reality">Tutkudan Gerçekliğe</span></h2>
+        <p data-tr="En sevdiğiniz evrenleri, özenle seçilmiş koleksiyonluk parçalarla gerçek dünyaya taşıyoruz." data-en="We bring your favorite universes to life through carefully selected collectible pieces.">En sevdiğiniz evrenleri, özenle seçilmiş koleksiyonluk parçalarla gerçek dünyaya taşıyoruz.</p>
+      </div>
+
+      <!-- Story Cards -->
+      <div class="about-story">
+        <div class="about-card reveal reveal-delay-1">
+          <span class="about-card-icon">⚘</span>
+          <h3 data-tr="Nasıl Başladık?" data-en="How We Started?">Nasıl Baş<span>ladık</span>?</h3>
+          <p data-tr="HaraCo, iki koleksiyonerin kendi zevklerine uygun kaliteli anime ürünlerini bulamamasıyla başladı. Biz de Japonya ve Kore'deki bağımsız sanatçılarla ortaklık kurarak, her parçası özenle seçilmiş, sınırlı üretim koleksiyonlar oluşturmaya karar verdik. Her ürün, bir hikayenin parçası." data-en="HaraCo started when two collectors couldn't find quality anime items that matched their taste. So we partnered with independent artists in Japan and Korea to create carefully curated, limited-edition collections. Every product is part of a story.">
+            HaraCo, iki koleksiyonerin kendi zevklerine uygun kaliteli anime ürünlerini
+            bulamamasıyla başladı. Biz de Japonya ve Kore'deki bağımsız sanatçılarla ortaklık
+            kurarak, her parçası özenle seçilmiş, sınırlı üretim koleksiyonlar oluşturmaya
+            karar verdik. Her ürün, bir hikayenin parçası.
+          </p>
+        </div>
+        <div class="about-card reveal reveal-delay-2">
+          <span class="about-card-icon">✦</span>
+          <h3 data-tr="Sözümüz" data-en="Our Promise">Sö<span>züm</span>üz</h3>
+          <p data-tr="Kataloğumuzdaki her parça, titizlikle seçilir ve özenle paketlenir. Kaliteden asla ödün vermeyiz. Siparişiniz, size ulaşana kadar her aşamada özel bir yolculuk geçirir. Çünkü inanıyoruz ki her koleksiyoner, en iyisini hak eder." data-en="Every piece in our catalog is carefully selected and thoughtfully packaged. We never compromise on quality. Your order goes on a special journey at every stage until it reaches you. Because we believe every collector deserves the best.">
+            Kataloğumuzdaki her parça, titizlikle seçilir ve özenle paketlenir. Kaliteden asla
+            ödün vermeyiz. Siparişiniz, size ulaşana kadar her aşamada özel bir yolculuk geçirir.
+            Çünkü inanıyoruz ki her koleksiyoner, en iyisini hak eder.
+          </p>
+        </div>
+      </div>
+
+      <!-- Team -->
+      <div class="about-team-header reveal">
+        <span class="section-label" data-tr="Loncamız" data-en="Our Guild">Loncamız</span>
+        <h2 class="section-title" data-tr="Loncamızla Tanışın" data-en="Meet Our Guild">Loncamızla Tanışın</h2>
+      </div>
+      <div class="about-team">
+        <div class="team-card reveal reveal-delay-1">
+          <div class="team-logo founder">
+            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" color="var(--accent)">
+              <circle cx="20" cy="12" r="6"/>
+              <path d="M8 34c0-6.6 5.4-12 12-12s12 5.4 12 12"/>
+              <path d="M26 6l4-2-1 4 3 3-4 1"/>
+            </svg>
+          </div>
+          <span class="team-role" data-tr="Kurucu &amp; Küratör" data-en="Founder &amp; Curator">Kurucu &amp; Küratör</span>
+          <h4>Samet Gökhan Oksun</h4>
+          <p data-tr="Koleksiyonu titizlikle seçen, paketleyen ve markanın ruhunu her parçaya işleyen vizyoner." data-en="The visionary who carefully selects, packages, and imbues every piece with the brand's soul.">Koleksiyonu titizlikle seçen, paketleyen ve markanın ruhunu her parçaya işleyen vizyoner.</p>
+          <span class="team-tag" data-tr="Küratör Ruhu" data-en="Curator Spirit">⚘  Küratör Ruhu</span>
+        </div>
+        <div class="team-card reveal reveal-delay-2">
+          <div class="team-logo dev">
+            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" color="#fbbf24">
+              <polyline points="16 14 10 20 16 26"/>
+              <polyline points="24 14 30 20 24 26"/>
+              <line x1="21" y1="12" x2="19" y2="28"/>
+              <rect x="4" y="6" width="32" height="28" rx="4"/>
+            </svg>
+          </div>
+          <span class="team-role" data-tr="Sistem Mimarı" data-en="System Architect">Sistem Mimarı</span>
+          <h4>Burak Göktuğ Oksun</h4>
+          <p data-tr="Bu dijital deneyimi kodlayan, hayata geçiren ve her satırı özenle işleyen geliştirici." data-en="The developer who codes, brings to life, and carefully crafts every line of this digital experience.">Bu dijital deneyimi kodlayan, hayata geçiren ve her satırı özenle işleyen geliştirici.</p>
+          <span class="team-tag" data-tr="Koduyla Üreten" data-en="Built with Code">✦  Koduyla Üreten</span>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- ========== CONTACT ========== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div>
+            <span class="section-label" data-tr="İletişim" data-en="Contact">İletişim</span>
+            <h2 class="contact-heading" data-tr="Bize Bir Haberci Gönder" data-en="Send Us a Messenger">Bize Bir <span class="glow">Haberci</span> Gönder</h2>
+            <p class="contact-desc" data-tr="Özel siparişler, ürün talepleri veya sadece en sevdiğin anime hakkında konuşmak için bize ulaşabilirsin." data-en="Reach out for custom orders, product requests, or just to talk about your favorite anime.">Özel siparişler, ürün talepleri veya sadece en sevdiğin anime hakkında konuşmak için bize ulaşabilirsin.</p>
+          </div>
+
+          <div class="contact-bird">
+            <div class="bird-wing left"></div>
+            <div class="bird-wing right"></div>
+            <div class="bird-body">
+              <div class="bird-beak"></div>
+              <div class="bird-letter"></div>
+            </div>
+            <div class="bird-tail"></div>
+            <div class="bird-legs"></div>
+          </div>
+
+          <div class="contact-socials">
+            <a href="https://www.instagram.com/haracotr/" target="_blank" rel="noopener noreferrer" class="contact-social-link" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/>
+              </svg>
+            </a>
+            <a href="https://www.trendyol.com/magaza/hara-company-m-942945?sst=0&channelId=1" target="_blank" rel="noopener noreferrer" class="contact-social-link trendyol" aria-label="Trendyol Mağazası">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap reveal reveal-delay-1">
+          <div class="contact-form-card">
+            <h3 class="contact-form-title" data-tr="Mesaj Gönder" data-en="Send a Message">Mesaj Gönder</h3>
+            <p class="contact-form-sub" data-tr="Sana en kısa sürede dönüş yapacağız ✨" data-en="We'll get back to you as soon as possible ✨">Sana en kısa sürede dönüş yapacağız ✨</p>
+            <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+              <input type="hidden" name="subject" value="HaraCo İletişim Formu" />
+              <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
+              <div class="field-group">
+                <label for="contactName" data-tr="İsim" data-en="Name">İsim</label>
+                <input type="text" id="contactName" name="name" placeholder="Adın soyadın" data-tr="Adın soyadın" data-en="Your full name" required />
+              </div>
+              <div class="field-group">
+                <label for="contactEmail" data-tr="E-posta" data-en="Email">E-posta</label>
+                <input type="email" id="contactEmail" name="email" placeholder="ornek@email.com" data-tr="ornek@email.com" data-en="example@email.com" required />
+              </div>
+              <div class="field-group fun-field">
+                <label for="contactChar" data-tr="Favori anime karakterin kim?" data-en="Who's your favorite anime character?">Favori anime karakterin kim?</label>
+                <span class="fun-icon">⚔️</span>
+                <input type="text" id="contactChar" name="favorite_character" placeholder="Örn: Roronoa Zoro" data-tr="Örn: Roronoa Zoro" data-en="E.g. Roronoa Zoro" />
+              </div>
+              <div class="field-group">
+                <label for="contactMsg" data-tr="Mesajın" data-en="Your Message">Mesajın</label>
+                <textarea id="contactMsg" name="message" placeholder="Ne düşünüyorsun?" data-tr="Ne düşünüyorsun?" data-en="What's on your mind?" required></textarea>
+              </div>
+              <button class="contact-submit" type="submit" id="contactSubmitBtn" data-tr="Gönder" data-en="Send">Gönder</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
   <!-- ========== FOOTER ========== -->
   <footer class="footer">
     <div class="container">
@@ -1374,41 +3328,41 @@
               <small style="font-family:var(--font-jp);font-size:0.5rem;font-weight:300;letter-spacing:1px;color:var(--text-muted);display:block;margin-top:-2px;">彩りのコレクション</small>
             </span>
           </a>
-          <p>Seçkin koleksiyonerler için özenle seçilmiş anime koleksiyon ürünleri. Her parçada kalite, sanat ve tutku.</p>
+          <p data-tr="Seçkin koleksiyonerler için özenle seçilmiş anime koleksiyon ürünleri. Her parçada kalite, sanat ve tutku." data-en="Carefully curated anime collectibles for discerning collectors. Quality, art and passion in every piece.">Seçkin koleksiyonerler için özenle seçilmiş anime koleksiyon ürünleri. Her parçada kalite, sanat ve tutku.</p>
         </div>
         <div>
-          <h4>Mağaza</h4>
+          <h4 data-tr="Mağaza" data-en="Shop">Mağaza</h4>
           <ul class="footer-links">
-            <li><a href="#">Figürler</a></li>
-            <li><a href="#">Anahtarlıklar</a></li>
-            <li><a href="#">Çıkartmalar</a></li>
-            <li><a href="#">Rozet</a></li>
-            <li><a href="#">Charm</a></li>
-            <li><a href="#">Kolye</a></li>
-            <li><a href="#">Sınırlı Üretim</a></li>
+            <li><a href="#" data-tr="Figürler" data-en="Figures">Figürler</a></li>
+            <li><a href="#" data-tr="Anahtarlıklar" data-en="Keychains">Anahtarlıklar</a></li>
+            <li><a href="#" data-tr="Çıkartmalar" data-en="Stickers">Çıkartmalar</a></li>
+            <li><a href="#" data-tr="Rozet" data-en="Badges">Rozet</a></li>
+            <li><a href="#" data-tr="Charm" data-en="Charms">Charm</a></li>
+            <li><a href="#" data-tr="Kolye" data-en="Necklaces">Kolye</a></li>
+            <li><a href="#" data-tr="Sınırlı Üretim" data-en="Limited Edition">Sınırlı Üretim</a></li>
           </ul>
         </div>
         <div>
-          <h4>Destek</h4>
+          <h4 data-tr="Destek" data-en="Support">Destek</h4>
           <ul class="footer-links">
-            <li><a href="#">Kargo</a></li>
-            <li><a href="#">İade</a></li>
-            <li><a href="#">SSS</a></li>
-            <li><a href="#">İletişim</a></li>
+            <li><a href="#" data-tr="Kargo" data-en="Shipping">Kargo</a></li>
+            <li><a href="#" data-tr="İade" data-en="Returns">İade</a></li>
+            <li><a href="#" data-tr="SSS" data-en="FAQ">SSS</a></li>
+            <li><a href="#" data-tr="İletişim" data-en="Contact">İletişim</a></li>
           </ul>
         </div>
         <div>
-          <h4>Şirket</h4>
+          <h4 data-tr="Şirket" data-en="Company">Şirket</h4>
           <ul class="footer-links">
-            <li><a href="#">Hakkımızda</a></li>
-            <li><a href="#">Kariyer</a></li>
-            <li><a href="#">Gizlilik</a></li>
-            <li><a href="#">Koşullar</a></li>
+            <li><a href="#" data-tr="Hakkımızda" data-en="About Us">Hakkımızda</a></li>
+            <li><a href="#" data-tr="Kariyer" data-en="Careers">Kariyer</a></li>
+            <li><a href="#" data-tr="Gizlilik" data-en="Privacy">Gizlilik</a></li>
+            <li><a href="#" data-tr="Koşullar" data-en="Terms">Koşullar</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 HaraCo. Tüm hakları saklıdır.</p>
+        <p data-tr="&copy; 2026 HaraCo. Tüm hakları saklıdır." data-en="&copy; 2026 HaraCo. All rights reserved.">&copy; 2026 HaraCo. Tüm hakları saklıdır.</p>
         <div class="footer-socials">
           <a href="#" aria-label="Twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1433,62 +3387,86 @@
     </div>
   </footer>
 
+  <!-- ========== CART PANEL ========== -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h2 data-tr="Sepet" data-en="Cart">Sepet<span>.</span></h2>
+      <button class="cart-close" onclick="closeCart()" aria-label="Sepeti kapat">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer" id="cartFooter">
+      <div class="cart-total">
+        <span class="cart-total-label" data-tr="Toplam" data-en="Total">Toplam</span>
+        <span class="cart-total-price" id="cartTotal">0.00 TL</span>
+      </div>
+      <button class="cart-checkout" id="checkoutBtn" disabled onclick="checkout()" data-tr="Satın Al" data-en="Checkout">Satın Al</button>
+    </div>
+  </div>
+
   <script>
     // ========== PRODUCT DATA ==========
     const products = [
-      { id: 1, name: 'Shadow Strike Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/p62kJnb6/anahtarl-k1.jpg', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 2, name: 'Neon Samuray Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/Fkx09DhD/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 3, name: 'Siber Kedi Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/xK499ZmB/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 4, name: 'Ejderha Ruhu Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/nqkbcG1K/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 5, name: 'Sakura Rüyaları Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/chysNGZY/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 6, name: 'Piksel Kahraman Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/wh6gRmvN/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 7, name: 'Yıldırım Tanrısı Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/x869Z83K/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 8, name: 'Ay Işığı Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/DPmN8nqF/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 9, name: 'Anime Gözler Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/3yBrDrVC/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 10, name: 'Shadow Strike Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/LDz9XhjX/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 11, name: 'Neon Samuray Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/BHRsFJFD/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 12, name: 'Ejderha Ruhu Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/XfTc59tW/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 13, name: 'Sakura Rüyaları Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/jkB9nsFL/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 14, name: 'Piksel Kahraman Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/67xpBKgt/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 15, name: 'Yıldırım Tanrısı Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/Hfs1DsB9/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 16, name: 'Ay Işığı Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/WvVQGcNj/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 17, name: 'Anime Gözler Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/ds3vWJQs/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 18, name: 'Shadow Strike Figürü', category: 'figures', price: 299.00, image: 'https://i.ibb.co/WNmZH7LN/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 19, name: 'Ejderha Ruhu Figürü', category: 'figures', price: 299.00, image: 'https://i.ibb.co/tpY50bkT/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 20, name: 'Yıldırım Tanrısı Figürü', category: 'figures', price: 299.00, image: 'https://i.ibb.co/h1VHfMv3/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 32, name: 'Sakura Savaşçısı Figürü', category: 'figures', price: 299.00, image: 'https://i.ibb.co/9PvzQph/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 33, name: 'Neon Samuray Figürü', category: 'figures', price: 299.00, image: 'https://i.ibb.co/Z1FhM3mM/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 21, name: 'Siber Kedi Çıkartma Seti', category: 'stickers', price: 139.99, image: 'https://i.ibb.co/Z6yZmjL6/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 22, name: 'Piksel Kahraman Çıkartma', category: 'stickers', price: 139.99, image: 'https://i.ibb.co/7xPQL0rM/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 23, name: 'Anime Gözler Çıkartma Seti', category: 'stickers', price: 139.99, image: 'https://i.ibb.co/6qmkCKp/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 41, name: 'Neon Samuray Çıkartma', category: 'stickers', price: 139.99, image: 'https://i.ibb.co/p6qTSd38/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 24, name: 'Shadow Strike Rozet', category: 'rozet', price: 139.99, image: 'https://i.ibb.co/yc3YjZDg/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 25, name: 'Piksel Kahraman Rozet', category: 'rozet', price: 139.99, image: 'https://i.ibb.co/nqCwh0c2/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 34, name: 'Sakura Rüyaları Rozet', category: 'rozet', price: 139.99, image: 'https://i.ibb.co/Z1Rbxssf/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 35, name: 'Neon Samuray Rozet', category: 'rozet', price: 139.99, image: 'https://i.ibb.co/0jr51c9c/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 36, name: 'Ejderha Ruhu Rozet', category: 'rozet', price: 139.99, image: 'https://i.ibb.co/hnzCTNX/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 26, name: 'Neon Samuray Charm', category: 'charm', price: 148.99, image: 'https://i.ibb.co/jkRMTbvB/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 27, name: 'Sakura Rüyaları Charm', category: 'charm', price: 148.99, image: 'https://i.ibb.co/R4JNMBRH/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 28, name: 'Ay Işığı Charm', category: 'charm', price: 148.99, image: 'https://i.ibb.co/d0K3Vdc4/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 37, name: 'Shadow Strike Charm', category: 'charm', price: 148.99, image: 'https://i.ibb.co/RTYYMNkm/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 38, name: 'Ejderha Ruhu Charm', category: 'charm', price: 148.99, image: 'https://i.ibb.co/WvSFKJXF/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 39, name: 'Yıldırım Tanrısı Charm', category: 'charm', price: 148.99, image: 'https://i.ibb.co/7x9nkJGT/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 40, name: 'Anime Gözler Charm', category: 'charm', price: 148.99, image: 'https://i.ibb.co/LXDbjwZB/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 29, name: 'Ejderha Ruhu Kolye', category: 'kolye', price: 155, image: 'https://i.ibb.co/CKRk6ZPM/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
-      { id: 30, name: 'Yıldırım Tanrısı Kolye', category: 'kolye', price: 155, image: 'https://i.ibb.co/jkJ78TGY/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 1, name: 'Killua Zoldyck - Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/p62kJnb6/anahtarl-k1.jpg', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 2, name: 'Satoru Gojo - Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/Fkx09DhD/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 3, name: 'Levi Ackerman - Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/xK499ZmB/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 4, name: 'Levi Ackerman - Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/nqkbcG1K/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 5, name: 'Kafka - Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/chysNGZY/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 6, name: 'Ayato - Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/wh6gRmvN/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 7, name: 'Nami - Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/x869Z83K/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 8, name: 'Light Yagami - Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/DPmN8nqF/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 9, name: 'Gizemli Karakter - Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/3yBrDrVC/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 10, name: 'Totoro - Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/LDz9XhjX/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 11, name: 'Eevee - Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/BHRsFJFD/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 12, name: 'Tony Tony Chopper - Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/XfTc59tW/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 13, name: 'Gizemli Karakter - Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/jkB9nsFL/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 14, name: 'Tony Tony Chopper - Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/67xpBKgt/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 15, name: 'Tony Tony Chopper - Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/Hfs1DsB9/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 16, name: 'Gizemli Karakter - Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/WvVQGcNj/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 17, name: 'Gizemli Karakter - Anahtarlık', category: 'keychains', price: 148.99, image: 'https://i.ibb.co/ds3vWJQs/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 18, name: 'Husk - Akrilik Figür', category: 'figures', price: 299.00, image: 'https://i.ibb.co/WNmZH7LN/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 19, name: 'Angel Dust - Akrilik Figür', category: 'figures', price: 299.00, image: 'https://i.ibb.co/tpY50bkT/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 20, name: 'Alastor - Akrilik Figür', category: 'figures', price: 299.00, image: 'https://i.ibb.co/h1VHfMv3/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 32, name: 'Joker - Akrilik Figür', category: 'figures', price: 299.00, image: 'https://i.ibb.co/9PvzQph/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 33, name: 'Levi Ackerman - Akrilik Figür', category: 'figures', price: 299.00, image: 'https://i.ibb.co/Z1FhM3mM/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 21, name: 'Manga Paneli - Çıkartma Seti', category: 'stickers', price: 139.99, image: 'https://i.ibb.co/Z6yZmjL6/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 22, name: 'Stray Kids Günlük Konsept - Çıkartma Seti', category: 'stickers', price: 139.99, image: 'https://i.ibb.co/7xPQL0rM/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 23, name: 'Stray Kids Pembe Konsept - Çıkartma Seti', category: 'stickers', price: 139.99, image: 'https://i.ibb.co/6qmkCKp/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 41, name: 'Stray Kids Portre - Çıkartma Seti', category: 'stickers', price: 139.99, image: 'https://i.ibb.co/p6qTSd38/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 24, name: 'Manhwa Rozet Seti', category: 'rozet', price: 139.99, image: 'https://i.ibb.co/yc3YjZDg/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 25, name: 'Kyojuro Rengoku - Rozet Seti', category: 'rozet', price: 139.99, image: 'https://i.ibb.co/nqCwh0c2/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 34, name: 'Mitsuri Kanroji - Rozet Seti', category: 'rozet', price: 139.99, image: 'https://i.ibb.co/Z1Rbxssf/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 35, name: 'Zenitsu Agatsuma - Rozet Seti', category: 'rozet', price: 139.99, image: 'https://i.ibb.co/0jr51c9c/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 36, name: 'Stray Kids - Rozet Seti', category: 'rozet', price: 139.99, image: 'https://i.ibb.co/hnzCTNX/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 26, name: 'Alien Stage Till Charmı', category: 'charm', price: 148.99, image: 'https://i.ibb.co/jkRMTbvB/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 27, name: 'Alien Stage Hyuna Charmı', category: 'charm', price: 148.99, image: 'https://i.ibb.co/R4JNMBRH/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 28, name: 'Alien Stage İvan Charmı', category: 'charm', price: 148.99, image: 'https://i.ibb.co/d0K3Vdc4/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 37, name: 'Aespa Kpop Lightstick Charmı', category: 'charm', price: 148.99, image: 'https://i.ibb.co/RTYYMNkm/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 38, name: 'Wolf Chan - Charm', category: 'charm', price: 148.99, image: 'https://i.ibb.co/WvSFKJXF/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 39, name: 'Leebit - Charm', category: 'charm', price: 148.99, image: 'https://i.ibb.co/7x9nkJGT/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 40, name: 'Han Quokka - Charm', category: 'charm', price: 148.99, image: 'https://i.ibb.co/LXDbjwZB/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 29, name: 'Siyah Çiçek Desenli Pena Kolye', category: 'kolye', price: 155, image: 'https://i.ibb.co/CKRk6ZPM/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
+      { id: 30, name: 'Viva La Vida Karpuz Pena Kolye', category: 'kolye', price: 155, image: 'https://i.ibb.co/jkJ78TGY/image.png', bg: 'linear-gradient(135deg, #2D1550, #1A0C33)' },
     ];
 
     // ========== RENDER PRODUCTS ==========
     const grid = document.getElementById('productsGrid');
     let activeFilter = 'all';
+    let searchTerm = '';
 
     function renderProducts(filter) {
-      const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
+      const byCategory = filter === 'all' ? products : products.filter(p => p.category === filter);
+      const term = searchTerm.toLowerCase().trim();
+      const filtered = term ? byCategory.filter(p => p.name.toLowerCase().includes(term)) : byCategory;
       grid.innerHTML = filtered.map((p, i) => `
         <div class="product-card reveal reveal-delay-${(i % 3) + 1}" data-category="${p.category}">
           <div class="product-image" style="background: ${p.bg};">
             <div class="product-image-glow"></div>
-            <span class="emoji">${p.image ? `<img src="${p.image}" alt="${p.name}" />` : p.emoji}</span>
+            <span class="emoji">${p.image ? `<img src="${p.image}" alt="${p.name}" loading="lazy" />` : p.emoji}</span>
           </div>
           <div class="product-info">
             <div class="product-category">${p.category === 'figures' ? 'Figür' : p.category === 'keychains' ? 'Anahtarlık' : p.category === 'stickers' ? 'Çıkartma' : p.category === 'rozet' ? 'Rozet' : p.category === 'charm' ? 'Charm' : 'Kolye'}</div>
@@ -1520,15 +3498,208 @@
       });
     });
 
+    // ========== SEARCH ==========
+    const searchInput = document.getElementById('searchInput');
+    const searchClear = document.getElementById('searchClear');
+
+    searchInput.addEventListener('input', () => {
+      searchTerm = searchInput.value;
+      searchClear.classList.toggle('visible', searchTerm.length > 0);
+      renderProducts(activeFilter);
+    });
+
+    searchClear.addEventListener('click', () => {
+      searchInput.value = '';
+      searchTerm = '';
+      searchClear.classList.remove('visible');
+      renderProducts(activeFilter);
+      searchInput.focus();
+    });
+
     // ========== CART ==========
-    let cartCount = 0;
+    let cart = [];
+
     function addToCart(id) {
-      cartCount++;
-      document.getElementById('cartCount').textContent = cartCount;
-      const btn = event.currentTarget;
-      btn.style.transform = 'scale(1.3)';
-      setTimeout(() => btn.style.transform = '', 300);
+      const product = products.find(p => p.id === id);
+      if (!product) return;
+      const existing = cart.find(item => item.id === id);
+      if (existing) {
+        existing.qty++;
+      } else {
+        cart.push({ ...product, qty: 1 });
+      }
+      updateCartUI();
+      const btn = event?.currentTarget;
+      if (btn) {
+        btn.style.transform = 'scale(1.3)';
+        setTimeout(() => btn.style.transform = '', 300);
+      }
+      openCart();
     }
+
+    function removeFromCart(id) {
+      cart = cart.filter(item => item.id !== id);
+      updateCartUI();
+    }
+
+    function changeQty(id, delta) {
+      const item = cart.find(i => i.id === id);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) {
+        removeFromCart(id);
+        return;
+      }
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const count = cart.reduce((sum, i) => sum + i.qty, 0);
+      document.getElementById('cartCount').textContent = count;
+      renderCartItems();
+      renderCartFooter();
+    }
+
+    function renderCartItems() {
+      const container = document.getElementById('cartItems');
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="cart-empty">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+            </svg>
+            <p data-tr="Sepetin şu an boş" data-en="Your cart is empty">Sepetin şu an boş</p>
+          </div>`;
+        return;
+      }
+      container.innerHTML = cart.map(item => `
+        <div class="cart-item">
+          <div class="cart-item-img">
+            <img src="${item.image}" alt="${item.name}" loading="lazy" />
+          </div>
+          <div class="cart-item-info">
+            <div class="cart-item-name">${item.name}</div>
+            <div class="cart-item-price">${(item.price * item.qty).toFixed(2)} TL</div>
+          </div>
+          <div class="cart-item-actions">
+            <div class="cart-qty">
+              <button onclick="changeQty(${item.id}, -1)" aria-label="Azalt">−</button>
+              <span>${item.qty}</span>
+              <button onclick="changeQty(${item.id}, 1)" aria-label="Arttır">+</button>
+            </div>
+            <button class="cart-item-remove" onclick="removeFromCart(${item.id})" aria-label="Kaldır">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderCartFooter() {
+      const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
+      document.getElementById('cartTotal').textContent = `${total.toFixed(2)} TL`;
+      document.getElementById('checkoutBtn').disabled = cart.length === 0;
+    }
+
+    function openCart() {
+      document.getElementById('cartOverlay').classList.add('open');
+      document.getElementById('cartPanel').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCart() {
+      document.getElementById('cartOverlay').classList.remove('open');
+      document.getElementById('cartPanel').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function checkout() {
+      if (cart.length === 0) return;
+      const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
+      const itemList = cart.map(i => `${i.name} x${i.qty}`).join(', ');
+      const isTR = lang === 'tr';
+      const msg = isTR
+        ? `🛒 Siparişiniz alındı!\n\nÜrünler: ${itemList}\nToplam: ${total.toFixed(2)} TL\n\nTeşekkürler, HaraCo ❤️`
+        : `🛒 Order received!\n\nItems: ${itemList}\nTotal: ${total.toFixed(2)} TL\n\nThank you, HaraCo ❤️`;
+      alert(msg);
+      cart = [];
+      updateCartUI();
+      closeCart();
+    }
+
+    // ========== CONTACT FORM ==========
+    document.getElementById('contactForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('contactSubmitBtn');
+      const form = e.target;
+      const data = new FormData(form);
+      btn.disabled = true;
+      btn.textContent = 'Gönderiliyor...';
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
+        const json = await res.json();
+        if (json.success) {
+          alert('✨ Mesajınız başarıyla gönderildi! En kısa sürede dönüş yapacağız. 🚀');
+          form.reset();
+        } else {
+          alert('Bir hata oluştu. Lütfen tekrar deneyin.');
+        }
+      } catch {
+        alert('Bağlantı hatası. Lütfen daha sonra tekrar deneyin.');
+      }
+      btn.disabled = false;
+      btn.textContent = 'Gönder';
+    });
+
+    // ========== THEME TOGGLE ==========
+    const html = document.documentElement;
+    const themeBtn = document.getElementById('navTheme');
+    const sun = themeBtn.querySelector('.theme-sun');
+    const moon = themeBtn.querySelector('.theme-moon');
+    if (localStorage.getItem('theme') === 'light') {
+      html.classList.add('light-mode');
+      sun.style.display = 'none';
+      moon.style.display = '';
+    }
+    themeBtn.addEventListener('click', () => {
+      const isLight = html.classList.toggle('light-mode');
+      sun.style.display = isLight ? 'none' : '';
+      moon.style.display = isLight ? '' : 'none';
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+
+    // ========== LANGUAGE TOGGLE ==========
+    let lang = localStorage.getItem('lang') || 'tr';
+    function applyLang(l) {
+      document.getElementById('navLang').textContent = l.toUpperCase();
+      document.querySelectorAll('[data-tr][data-en]').forEach(el => {
+        const val = el.getAttribute(`data-${l}`);
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+          el.placeholder = val;
+        } else {
+          el.textContent = val;
+        }
+      });
+    }
+    applyLang(lang);
+    document.getElementById('navLang').addEventListener('click', () => {
+      lang = lang === 'tr' ? 'en' : 'tr';
+      localStorage.setItem('lang', lang);
+      applyLang(lang);
+    });
+
+    // ========== NAV SEARCH CLICK ==========
+    document.getElementById('navSearchIcon').addEventListener('click', () => {
+      const section = document.getElementById('shop');
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setTimeout(() => document.getElementById('searchInput').focus(), 500);
+    });
+
+    // ========== NAV CART CLICK ==========
+    document.querySelector('.nav-cart').addEventListener('click', openCart);
 
     // ========== MOBILE NAV ==========
     document.getElementById('navToggle').addEventListener('click', () => {
@@ -1553,6 +3724,38 @@
 
       document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     }
+
+    // ========== 3D TILT ON GLASS CARDS ==========
+    document.querySelectorAll('.about-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width;
+        const y = (e.clientY - rect.top) / rect.height;
+        card.style.setProperty('--mx', `${x * 100}%`);
+        card.style.setProperty('--my', `${y * 100}%`);
+      });
+    });
+
+    // ========== 3D TILT ON CATEGORY CARDS ==========
+    document.querySelectorAll('.category-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width;
+        const y = (e.clientY - rect.top) / rect.height;
+        const tiltX = (y - 0.5) * -12;
+        const tiltY = (x - 0.5) * 12;
+        card.style.setProperty('--rot-x', `${tiltX}deg`);
+        card.style.setProperty('--rot-y', `${tiltY}deg`);
+        card.style.setProperty('--mx', `${x * 100}%`);
+        card.style.setProperty('--my', `${y * 100}%`);
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.setProperty('--rot-x', '0deg');
+        card.style.setProperty('--rot-y', '0deg');
+        card.style.setProperty('--mx', '50%');
+        card.style.setProperty('--my', '0%');
+      });
+    });
 
     // ========== INIT ==========
     renderProducts('all');
