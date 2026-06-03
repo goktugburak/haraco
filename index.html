@@ -604,7 +604,7 @@ updateCartUI();
 const btn = event?.currentTarget;
 if (btn) {
 btn.style.transform = 'scale(1.3)';
-setTimeout(() => btn.style.transform = '', 300);
+setTimeout(() => btn.style.transform = '', 300);  
 }
 openCart();
 }
@@ -695,7 +695,7 @@ cart = [];
 updateCartUI();
 closeCart();
 }
-// CONTACT FORM
+// CONTACT FORM ``
 document.getElementById('contactForm').addEventListener('submit', async (e) => {
 e.preventDefault();
 const btn = document.getElementById('contactSubmitBtn');
