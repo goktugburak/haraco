@@ -17,5 +17,4 @@ Bu projenin geliştirilmesinde aşağıdaki teknolojiler kullanılmıştır:
 Projenin canlı haline aşağıdaki bağlantıdan ulaşabilirsiniz:
 **[Haraco'yu Ziyaret Et](https://haraco.vercel.app/)**
 
-
 *Geliştirici: Burak*
